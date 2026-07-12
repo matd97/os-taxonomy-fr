@@ -8,7 +8,7 @@ The French sibling of Marble's [os-taxonomy](https://github.com/withmarbleapp/os
 
 ## See it
 
-**[Explore the interactive 3D graph](https://matd97.github.io/os-taxonomy-fr/)** — every dot a micro-topic, height is age, threads are prerequisites. Click any concept to trace everything a learner must master before it, play the path chronologically, or morph the whole curriculum into a constellation or a waving tricolore. Bilingual EN/FR interface.
+**[Explore the interactive 3D graph](https://www.migueltorrez.ai/projects/french-curriculum)** — every dot a micro-topic, height is age, threads are prerequisites. Click any concept to trace everything a learner must master before it, play the path chronologically, or morph the whole curriculum into a constellation or a waving tricolore. Bilingual EN/FR interface. A self-contained copy of the same viewer ships in this repo as `viewer.html` (no dependencies, works offline).
 
 | Ordered | Constellation | Flag |
 |---|---|---|
@@ -41,7 +41,8 @@ Most curriculum data is either a flat list of standards or locked inside a produ
 | `data/fr-manifest.json` | Counts + SHA-256 checksums |
 | `data/sources.json` | The 127 verified official source documents |
 | `schema/` | JSON Schemas (Marble-compatible; topics extended with `nameFr`) |
-| `index.html` | The self-contained interactive 3D viewer (no dependencies, works offline) |
+| `viewer.html` | The self-contained interactive 3D viewer (no dependencies, works offline) |
+| `index.html` | Redirect to the live viewer at [migueltorrez.ai](https://www.migueltorrez.ai/projects/french-curriculum) |
 | `METHODOLOGY.md` | Precisely how this was built |
 
 ## How it was built
@@ -67,7 +68,7 @@ The schemas match Marble's os-taxonomy (topics add an optional `nameFr`), so too
 
 ## En français
 
-Une taxonomie ouverte et structurée de ce que les élèves apprennent en France, de la petite section à la Terminale : les programmes officiels décomposés en 6 051 micro-notions, reliées par 10 050 liens de prérequis (graphe acyclique vérifié), alignées sur 14 549 exigences extraites mot pour mot des textes officiels en vigueur à la rentrée 2025 (voie générale). Chaque notion porte un nom français et anglais, une tranche d'âge et des signes de maîtrise ; chaque exigence renvoie à son document source et à sa référence au Bulletin officiel. Le visualiseur interactif (`index.html`, interface FR/EN) permet de remonter la filiation complète de n'importe quelle notion. La méthode complète est décrite dans `METHODOLOGY.md`.
+Une taxonomie ouverte et structurée de ce que les élèves apprennent en France, de la petite section à la Terminale : les programmes officiels décomposés en 6 051 micro-notions, reliées par 10 050 liens de prérequis (graphe acyclique vérifié), alignées sur 14 549 exigences extraites mot pour mot des textes officiels en vigueur à la rentrée 2025 (voie générale). Chaque notion porte un nom français et anglais, une tranche d'âge et des signes de maîtrise ; chaque exigence renvoie à son document source et à sa référence au Bulletin officiel. Le visualiseur interactif ([en ligne](https://www.migueltorrez.ai/projects/french-curriculum) ou `viewer.html`, interface FR/EN) permet de remonter la filiation complète de n'importe quelle notion. La méthode complète est décrite dans `METHODOLOGY.md`.
 
 ## Licensing
 

@@ -208,7 +208,7 @@
   #playpill .pb:hover, #playpill .stop:hover { background: rgba(255,255,255,.18); }
   #playpill .toggle { background: rgba(232,113,58,.22); color: var(--accent); font-size: 12px; }
 
-  body.embed #side { top: 69px; bottom: 53px; }
+  body.embed #side { top: 69px; bottom: 53px; padding: 14px 16px 11px; gap: 10px; }
   body.embed #card { top: 85px; bottom: 69px; }
   body.embed #sideToggle { top: 81px; }
   body.embed #side, body.embed #card { scrollbar-width: none; }
@@ -216,6 +216,44 @@
   body.embed #side.clip, body.embed #card.clip {
     -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent);
     mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent); }
+  /* compact the panel so it fits between the site bars without scrolling */
+  body.embed #side { gap: 8px; }
+  body.embed #side .eyebrow { margin-bottom: 3px; }
+  body.embed #side h1 { font-size: 15.5px; margin-bottom: 4px; }
+  body.embed #side .sub { font-size: 11px; line-height: 1.45; }
+  body.embed #q { padding: 6px 10px; font-size: 12px; }
+  body.embed .s-controls button { padding: 5px 8px; }
+  body.embed .s-modes button { padding: 5px 4px; }
+  body.embed .s-sec { padding-top: 8px; }
+  body.embed #side h4 { margin-bottom: 5px; }
+  body.embed .chip { padding: 2px 8px; font-size: 11px; }
+  body.embed #chips { gap: 2px; }
+  body.embed #bandchips { gap: 3px; }
+  body.embed #side .how li { font-size: 11px; margin-bottom: 3px; }
+  body.embed .s-foot { padding-top: 8px; font-size: 9.5px; }
+  body.embed .about-link { margin-top: 4px; }
+  /* "How to explore" collapses to a disclosure row (the embed script wraps it) */
+  body.embed .how summary { cursor: pointer; color: var(--faint); }
+  body.embed .how summary h4 { display: inline; margin: 0; }
+  body.embed .how summary:hover h4 { color: var(--muted); }
+  body.embed .how details[open] summary { margin-bottom: 5px; }
+  @media (max-height: 832px) {
+    body.embed #side { gap: 7px; }
+    body.embed #side .eyebrow { font-size: 9px; }
+    body.embed #side h1 { font-size: 15px; }
+    body.embed #side .sub { font-size: 10.5px; }
+    body.embed #q { padding: 5px 10px; }
+    body.embed .s-controls button { padding: 4px 8px; }
+    body.embed .s-sec { padding-top: 7px; }
+    body.embed .chip { padding: 1px 8px; }
+    body.embed .s-foot > span { display: none; }
+    body.embed .s-foot { padding-top: 5px; }
+    body.embed .about-link { margin-top: 2px; }
+  }
+  @media (max-height: 776px) {
+    body.embed #side { gap: 6px; }
+    body.embed .s-sec.how { display: none; }
+  }
   @media (max-width: 640px) {
     body.embed #side { top: 65px; bottom: 89px; padding-top: 58px; }
     body.embed #card { top: 81px; bottom: 105px; }
@@ -1133,6 +1171,17 @@
 <script>
 if (new URLSearchParams(location.search).has('embed')) {
   document.body.classList.add('embed');
+  // Collapse "How to explore" into a disclosure row so the panel fits
+  // between the site bars without scrolling; hints stay one click away.
+  const how = document.querySelector('.s-sec.how');
+  if (how) {
+    const det = document.createElement('details');
+    const sum = document.createElement('summary');
+    sum.appendChild(how.querySelector('h4'));
+    det.appendChild(sum);
+    det.appendChild(how.querySelector('ul'));
+    how.appendChild(det);
+  }
   // Scrollable panels get a bottom fade only while more content is below.
   for (const id of ['side', 'card']) {
     const el = document.getElementById(id);

@@ -216,22 +216,23 @@
   body.embed #side.clip, body.embed #card.clip {
     -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent);
     mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent); }
-  /* compact the panel so it fits between the site bars without scrolling */
-  body.embed #side { gap: 8px; }
-  body.embed #side .eyebrow { margin-bottom: 3px; }
-  body.embed #side h1 { font-size: 15.5px; margin-bottom: 4px; }
-  body.embed #side .sub { font-size: 11px; line-height: 1.45; }
-  body.embed #q { padding: 6px 10px; font-size: 12px; }
+  /* compact the panel so it fits between the site bars without scrolling;
+     leftover height spreads evenly between sections instead of pooling */
+  body.embed #side { gap: 8px; justify-content: space-between; }
+  body.embed #side .eyebrow { margin-bottom: 2px; }
+  body.embed #side h1 { font-size: 15.5px; margin-bottom: 3px; }
+  body.embed #side .sub { font-size: 11px; line-height: 1.4; }
+  body.embed #q { padding: 5px 10px; font-size: 12px; }
   body.embed .s-controls button { padding: 5px 8px; }
   body.embed .s-modes button { padding: 5px 4px; }
   body.embed .s-sec { padding-top: 8px; }
   body.embed #side h4 { margin-bottom: 5px; }
-  body.embed .chip { padding: 2px 8px; font-size: 11px; }
-  body.embed #chips { gap: 2px; }
+  body.embed .chip { padding: 2.5px 8px; font-size: 11px; }
+  body.embed #chips { gap: 3px; }
   body.embed #bandchips { gap: 3px; }
   body.embed #side .how li { font-size: 11px; margin-bottom: 3px; }
-  body.embed .s-foot { padding-top: 8px; font-size: 9.5px; }
-  body.embed .about-link { margin-top: 4px; }
+  body.embed .s-foot { margin-top: 0; padding-top: 6px; font-size: 9.5px; }
+  body.embed .about-link { margin-top: 2px; }
   /* "How to explore" collapses to a disclosure row (the embed script wraps it) */
   body.embed .how summary { cursor: pointer; color: var(--faint); }
   body.embed .how summary h4 { display: inline; margin: 0; }
@@ -246,6 +247,7 @@
     body.embed .s-controls button { padding: 4px 8px; }
     body.embed .s-sec { padding-top: 7px; }
     body.embed .chip { padding: 1px 8px; }
+    body.embed #chips { gap: 2px; }
     body.embed .s-foot > span { display: none; }
     body.embed .s-foot { padding-top: 5px; }
     body.embed .about-link { margin-top: 2px; }

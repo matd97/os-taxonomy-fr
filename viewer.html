@@ -208,7 +208,7 @@
   #playpill .pb:hover, #playpill .stop:hover { background: rgba(255,255,255,.18); }
   #playpill .toggle { background: rgba(232,113,58,.22); color: var(--accent); font-size: 12px; }
 
-  body.embed #side { top: 69px; bottom: 53px; padding: 14px 16px 11px; gap: 10px; }
+  body.embed #side { top: 69px; bottom: 53px; }
   body.embed #card { top: 85px; bottom: 69px; }
   body.embed #sideToggle { top: 81px; }
   body.embed #side, body.embed #card { scrollbar-width: none; }
@@ -216,43 +216,56 @@
   body.embed #side.clip, body.embed #card.clip {
     -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent);
     mask-image: linear-gradient(180deg, #000 calc(100% - 40px), transparent); }
-  /* compact the panel so it fits between the site bars without scrolling;
-     leftover height spreads evenly between sections instead of pooling */
-  body.embed #side { gap: 8px; justify-content: space-between; }
-  body.embed #side .eyebrow { margin-bottom: 2px; }
-  body.embed #side h1 { font-size: 15.5px; margin-bottom: 3px; }
-  body.embed #side .sub { font-size: 11px; line-height: 1.4; }
-  body.embed #q { padding: 5px 10px; font-size: 12px; }
-  body.embed .s-controls button { padding: 5px 8px; }
-  body.embed .s-modes button { padding: 5px 4px; }
-  body.embed .s-sec { padding-top: 8px; }
-  body.embed #side h4 { margin-bottom: 5px; }
-  body.embed .chip { padding: 2.5px 8px; font-size: 11px; }
-  body.embed #chips { gap: 3px; }
-  body.embed #bandchips { gap: 3px; }
-  body.embed #side .how li { font-size: 11px; margin-bottom: 3px; }
-  body.embed .s-foot { margin-top: 0; padding-top: 6px; font-size: 9.5px; }
-  body.embed .about-link { margin-top: 2px; }
   /* "How to explore" collapses to a disclosure row (the embed script wraps it) */
   body.embed .how summary { cursor: pointer; color: var(--faint); }
   body.embed .how summary h4 { display: inline; margin: 0; }
   body.embed .how summary:hover h4 { color: var(--muted); }
   body.embed .how details[open] summary { margin-bottom: 5px; }
-  @media (max-height: 832px) {
+  /* Fixed comfortable spacing by default (tall viewports); progressively
+     tighter tiers keep the panel scroll-free as the viewport shortens.
+     Slack pools above the provenance footer, never between sections. */
+  @media (max-height: 1127px) {
+    body.embed #side { padding: 18px 17px 13px; gap: 12px; }
+    body.embed #side h1 { font-size: 16.5px; margin-bottom: 5px; }
+    body.embed #side .sub { font-size: 11.5px; line-height: 1.5; }
+    body.embed #q { padding: 7px 10px; font-size: 12px; }
+    body.embed .s-controls button { padding: 6px 8px; }
+    body.embed .s-modes button { padding: 6px 4px; }
+    body.embed .s-sec { padding-top: 11px; }
+    body.embed #side h4 { margin-bottom: 6px; }
+    body.embed .chip { padding: 3.5px 8px; font-size: 11px; }
+    body.embed #chips { gap: 3px; }
+    body.embed #bandchips { gap: 4px; }
+    body.embed .s-foot { padding-top: 9px; font-size: 10px; }
+  }
+  @media (max-height: 1014px) {
+    body.embed #side { padding: 14px 16px 11px; gap: 8px; }
+    body.embed #side .eyebrow { margin-bottom: 2px; }
+    body.embed #side h1 { font-size: 15.5px; margin-bottom: 3px; }
+    body.embed #side .sub { font-size: 11px; line-height: 1.4; }
+    body.embed #q { padding: 5px 10px; }
+    body.embed .s-controls button { padding: 5px 8px; }
+    body.embed .s-modes button { padding: 5px 4px; }
+    body.embed .s-sec { padding-top: 8px; }
+    body.embed #side h4 { margin-bottom: 5px; }
+    body.embed .chip { padding: 2.5px 8px; }
+    body.embed #bandchips { gap: 3px; }
+    body.embed .s-foot { padding-top: 6px; font-size: 9.5px; }
+    body.embed .about-link { margin-top: 2px; }
+  }
+  @media (max-height: 890px) {
     body.embed #side { gap: 7px; }
     body.embed #side .eyebrow { font-size: 9px; }
     body.embed #side h1 { font-size: 15px; }
     body.embed #side .sub { font-size: 10.5px; }
-    body.embed #q { padding: 5px 10px; }
     body.embed .s-controls button { padding: 4px 8px; }
     body.embed .s-sec { padding-top: 7px; }
     body.embed .chip { padding: 1px 8px; }
     body.embed #chips { gap: 2px; }
     body.embed .s-foot > span { display: none; }
     body.embed .s-foot { padding-top: 5px; }
-    body.embed .about-link { margin-top: 2px; }
   }
-  @media (max-height: 776px) {
+  @media (max-height: 795px) {
     body.embed #side { gap: 6px; }
     body.embed .s-sec.how { display: none; }
   }

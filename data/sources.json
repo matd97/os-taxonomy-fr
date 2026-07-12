@@ -1,0 +1,2883 @@
+{
+ "project": "French national curriculum source map (maternelle PS -> Terminale, voie generale)",
+ "purpose": "Source inventory for building a France equivalent of withmarbleapp/os-taxonomy curriculum-standards.json",
+ "generatedAt": "2026-07-10T09:44:32.583414+00:00",
+ "documentCount": 127,
+ "segments": [
+  {
+   "key": "system-map",
+   "segment": "SYSTEM MAP — overall architecture of the French national curriculum (cycles, socle commun, legal chain, horaires, authoritative indexes)",
+   "verification_verdict": "solid",
+   "subjects": [
+    "français",
+    "mathématiques",
+    "langues vivantes étrangères et régionales",
+    "histoire-géographie",
+    "enseignement moral et civique (EMC)",
+    "sciences et technologie",
+    "physique-chimie",
+    "sciences de la vie et de la Terre (SVT)",
+    "éducation physique et sportive (EPS)",
+    "arts plastiques",
+    "éducation musicale",
+    "questionner le monde",
+    "sciences numériques et technologie (SNT)",
+    "enseignement scientifique",
+    "philosophie",
+    "spécialités du lycée général",
+    "séries technologiques"
+   ],
+   "coverage_assessment": "The overall architecture is fully reconstructable: the 4-cycle structure (cycle 1 maternelle PS/MS/GS; cycle 2 CP/CE1/CE2; cycle 3 CM1/CM2/6e; cycle 4 5e/4e/3e) plus lycée GT (2nde + cycle terminal 1re/Tle) is confirmed, the socle commun (décret 2015-372, 5 domaines / 8 composantes) is captured with both legal and pedagogical sources, the legal chain arrêté→BOEN→éduscol is documented with concrete examples, and official horaires exist for every level (arrêtés 2015 école, 2015 collège, 2018 lycée). The single authoritative index lives in the éduscol 'J'enseigne au cycle X' portals plus the repères/attendus hub (6910); the in-force français/maths reform is pinned to exact arrêtés with phased application dates (cycle 1&2 rentrée 2025, cycle 3 2025/2026 split, cycle 4 2026).",
+   "gaps": [
+    "éduscol.education.gouv.fr and eduscol.education.fr frequently return HTTP 403 to automated fetchers — index/portal page contents were enumerated via search snippets, not direct fetch; downstream harvesting of the per-subject PDF links behind these portals should use a browser/MCP fetch or académie mirrors.",
+    "Cycle 1 (école maternelle) has a global programme d'enseignement (arrêté covering all 5 domaines d'apprentissage, not just français/maths) whose current full-programme reference was not separately pinned here — the maternelle index and the 2024 français/maths overlay are captured, but the consolidated maternelle programme arrêté (updated for rentrée 2025) should be confirmed by the cycle-1 researcher.",
+    "Collège horaires arrêté (MENE1511223A) has at least one later modification (MENE1717553A, 2017); the exact current consolidated grid should be verified rather than assumed from the 2015 base text.",
+    "Cycle 4 français/maths arrêté (MENE2602912A, BOEN 2026) per-level application calendar (which of 5e/4e/3e apply in 2026 vs 2027) needs confirmation from the arrêté body.",
+    "Lycée GT programmes derive from many separate per-subject arrêtés (réforme 2019); this system-map segment lists the horaires and the portal but not each subject programme arrêté — that enumeration belongs to the lycée researcher.",
+    "Histoire-géographie cycle 2/3 is under its own phased reform (new HG programme cycle 2 from rentrée 2026-2027 at CP, 2027-2028 at CE1/CE2 per search snippet) — flagged for the relevant cycle researcher to pin the exact arrêté."
+   ],
+   "documents": [
+    {
+     "title": "Le socle commun de connaissances, de compétences et de culture (portail éduscol)",
+     "url": "https://eduscol.education.gouv.fr/4761/le-socle-commun-de-connaissances-de-competences-et-de-culture",
+     "subjects": [
+      "transversal / tous enseignements"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "prose framework organized in 5 domaines; underlying décret enumerates 8 composantes évaluées en fin de cycle — semi-enumerable (5 domains + 8 components), not per-subject attendus",
+     "bo_reference": "Décret n° 2015-372 du 31 mars 2015; référentiel BO n°17 du 23 avril 2015",
+     "version_date": "2015 (in force since rentrée 2016, still current)",
+     "pdf_url": null,
+     "notes": "Overarching competency frame for the entire scolarité obligatoire (cycles 2-4). 5 domaines: 1) Les langages pour penser et communiquer; 2) Les méthodes et outils pour apprendre; 3) La formation de la personne et du citoyen; 4) Les systèmes naturels et les systèmes techniques; 5) Les représentations du monde et l'activité humaine. Domain 1 has 4 sub-components → 8 composantes total, each evaluated at end of each cycle. Root for cross-mapping cycle programmes to competencies."
+    },
+    {
+     "title": "Décret n° 2015-372 du 31 mars 2015 relatif au socle commun de connaissances, de compétences et de culture (Légifrance)",
+     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000030426718",
+     "subjects": [
+      "transversal / tous enseignements"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "legal text with annexe enumerating the 5 domaines and their objectives; authoritative legal source of the socle",
+     "bo_reference": "JORF n°0078 du 2 avril 2015; codified Code de l'éducation art. D.122-1 et annexe",
+     "version_date": "2015-03-31",
+     "pdf_url": null,
+     "notes": "Legal anchor of the socle. Illustrates the legal chain: décret/arrêté (Légifrance/JORF) → publication au Bulletin officiel (BOEN) → version consolidée pédagogique sur éduscol."
+    },
+    {
+     "title": "Le socle commun de connaissances, de compétences et de culture (page institutionnelle education.gouv.fr)",
+     "url": "https://www.education.gouv.fr/le-socle-commun-de-connaissances-de-competences-et-de-culture-12512",
+     "subjects": [
+      "transversal / tous enseignements"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "summary/prose description of the 5 domaines with link to the décret",
+     "bo_reference": "Décret n° 2015-372 du 31 mars 2015",
+     "version_date": "2015",
+     "pdf_url": null,
+     "notes": "Institutional (non-éduscol) presentation of the socle. Useful as fetch-fallback since éduscol blocks some automated fetches (HTTP 403)."
+    },
+    {
+     "title": "Repères annuels de progression et attendus de fin d'année du CP à la troisième (index éduscol)",
+     "url": "https://eduscol.education.gouv.fr/6910/reperes-annuels-de-progression-et-attendus-de-fin-d-annee-du-cp-la-troisieme",
+     "subjects": [
+      "français",
+      "mathématiques",
+      "langues vivantes",
+      "histoire-géographie",
+      "EMC",
+      "sciences et technologie",
+      "EPS",
+      "arts"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "INDEX/PORTAL page — links out to per-level, per-subject 'attendus de fin d'année' and 'repères annuels de progression' PDFs. Linked attendus docs are highly enumerable (year-by-year competency lists); this page itself is a hub.",
+     "bo_reference": null,
+     "version_date": "2025 (updated for new français/maths programmes)",
+     "pdf_url": null,
+     "notes": "Single authoritative hub for the finest-grained artifacts (attendus de fin d'année). Other researchers should harvest the per-subject PDFs linked here. éduscol may return 403 to automated fetchers; use browser/MCP fetch or académie mirrors."
+    },
+    {
+     "title": "J'enseigne au cycle 2 (cycle des apprentissages fondamentaux — CP/CE1/CE2) — index éduscol",
+     "url": "https://eduscol.education.gouv.fr/4347/enseigner-au-cycle-2",
+     "subjects": [
+      "français",
+      "mathématiques",
+      "questionner le monde",
+      "langues vivantes",
+      "EMC",
+      "EPS",
+      "arts plastiques",
+      "éducation musicale"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "INDEX page listing programmes, attendus de fin d'année, repères annuels, ressources d'accompagnement and évaluations nationales for cycle 2",
+     "bo_reference": null,
+     "version_date": "2025-2026",
+     "pdf_url": null,
+     "notes": "Cycle 2 = CP+CE1+CE2. One of four canonical 'J'enseigne au cycle X' portals assembling everything in force for a cycle."
+    },
+    {
+     "title": "J'enseigne au cycle 3 (cycle de consolidation — CM1/CM2/6e) — index éduscol",
+     "url": "https://eduscol.education.fr/87/j-enseigne-au-cycle-3",
+     "subjects": [
+      "français",
+      "mathématiques",
+      "sciences et technologie",
+      "histoire-géographie",
+      "langues vivantes",
+      "EMC",
+      "EPS",
+      "arts plastiques",
+      "éducation musicale"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "INDEX page: programmes, attendus, repères annuels, ressources, évaluation nationale 6e",
+     "bo_reference": null,
+     "version_date": "2025-2026",
+     "pdf_url": null,
+     "notes": "Cycle 3 straddles école élémentaire (CM1/CM2) and collège (6e) — the structural bridge cycle spanning two établissement types.",
+     "verification_note": "Resolves via 301 permanent redirect to the canonical host eduscol.education.gouv.fr/4356/enseigner-au-cycle-3 (cycle 3: CM1/CM2/6e). The claimed URL still works but is the legacy .fr/j-enseigne form; recommend citing the canonical target.",
+     "corrected_url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3"
+    },
+    {
+     "title": "J'enseigne au cycle 4 (cycle des approfondissements — 5e/4e/3e) — index éduscol",
+     "url": "https://eduscol.education.fr/90/j-enseigne-au-cycle-4",
+     "subjects": [
+      "français",
+      "mathématiques",
+      "physique-chimie",
+      "SVT",
+      "technologie",
+      "histoire-géographie",
+      "langues vivantes",
+      "EMC",
+      "EPS",
+      "arts plastiques",
+      "éducation musicale"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "INDEX page: programmes, attendus, repères annuels, ressources d'accompagnement",
+     "bo_reference": null,
+     "version_date": "2025-2026",
+     "pdf_url": null,
+     "notes": "Cycle 4 = collège 5e/4e/3e. New français/maths cycle-4 programmes published BOEN 2026 (see MENE2602912A entry).",
+     "verification_note": "Resolves via 301 permanent redirect to the canonical host eduscol.education.gouv.fr/4362/enseigner-au-cycle-4 (cycle 4: 5e/4e/3e). The claimed URL still works but is the legacy .fr/j-enseigne form; recommend citing the canonical target.",
+     "corrected_url": "https://eduscol.education.gouv.fr/4362/enseigner-au-cycle-4"
+    },
+    {
+     "title": "J'enseigne au lycée général et technologique (index éduscol, voies générale et technologique)",
+     "url": "https://eduscol.education.gouv.fr/4368/enseigner-au-lycee-generaltechnologique",
+     "subjects": [
+      "français",
+      "mathématiques",
+      "histoire-géographie",
+      "EPS",
+      "enseignement scientifique",
+      "SNT",
+      "philosophie",
+      "spécialités",
+      "séries technologiques"
+     ],
+     "levels": [
+      "2nde",
+      "1re",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "INDEX/PORTAL linking per-subject 'Programmes et ressources en {discipline} - voie GT' sub-pages, each carrying the programme BO + accompagnement resources",
+     "bo_reference": null,
+     "version_date": "2019 reform (bac 2021), current",
+     "pdf_url": null,
+     "notes": "Lycée GT is NOT organized by cycle-with-socle but by niveau (2nde, then cycle terminal 1re+Tle) and by enseignements communs / de spécialité / optionnels. Programmes stem largely from the 2018-2019 réforme du lycée (arrêtés 17 janvier / 19 juillet 2019). Per-subject pages e.g. eduscol.education.fr/1723 (maths), 5793 (français), 1667 (histoire-géo)."
+    },
+    {
+     "title": "Les programmes de l'école élémentaire / du collège / du lycée (portails institutionnels education.gouv.fr)",
+     "url": "https://www.education.gouv.fr/les-programmes-du-college-470408",
+     "subjects": [
+      "tous enseignements"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e",
+      "2nde",
+      "1re",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "summary index with links to BOEN arrêtés per cycle/level; institutional counterpart to éduscol",
+     "bo_reference": null,
+     "version_date": "current",
+     "pdf_url": null,
+     "notes": "Companion institutional index. Related: 'Les programmes du lycée général et technologique' (education.gouv.fr/...-9812). Use as fetch-fallback when éduscol returns 403."
+    },
+    {
+     "title": "Arrêté du 22 octobre 2024 — programmes de français et de mathématiques du cycle 1 (école maternelle: langage oral/écrit + premiers outils mathématiques) et du cycle 2 (CP/CE1/CE2)",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo41/MENE2415135A",
+     "subjects": [
+      "français",
+      "mathématiques"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS",
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "full programme text with enumerable connaissances/compétences and attendus; the arrêté annexes are the authoritative source",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024 (arrêté du 22-10-2024, JO du 25-10-2024)",
+     "version_date": "Entrée en vigueur rentrée 2025-2026",
+     "pdf_url": null,
+     "notes": "REFORM: new français + maths programmes for maternelle (cycle 1) and CP/CE1/CE2 (cycle 2), in force rentrée 2025. Pins the current version for the reform the brief flags. Légifrance mirror exists for the arrêté."
+    },
+    {
+     "title": "Arrêté du 10 avril 2025 — programmes de français et de mathématiques du cycle de consolidation (cycle 3: CM1/CM2/6e)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo16/MENE2504620A",
+     "subjects": [
+      "français",
+      "mathématiques"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "full programme text, enumerable competencies/attendus in annexes",
+     "bo_reference": "BOEN n°16 du 17 avril 2025 (arrêté du 10-04-2025); Légifrance JORFTEXT000051468918",
+     "version_date": "En vigueur rentrée 2025 pour CM1 et 6e; rentrée 2026 pour CM2",
+     "pdf_url": null,
+     "notes": "REFORM, phased entry: CM1 + 6e at rentrée 2025-2026, CM2 at rentrée 2026-2027. Assemblers must track split in-force dates within a single cycle."
+    },
+    {
+     "title": "Arrêté 2026 — programmes de français et de mathématiques du cycle des approfondissements (cycle 4: 5e/4e/3e)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A",
+     "subjects": [
+      "français",
+      "mathématiques"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "entering_force_2026",
+     "format": "html",
+     "granularity": "full programme text, enumerable competencies/attendus in annexes",
+     "bo_reference": "BOEN n°10 de 2026 (arrêté MENE2602912A)",
+     "version_date": "Rentrée 2026 (phased — verify per-level dates in the arrêté)",
+     "pdf_url": null,
+     "notes": "REFORM completes the français/maths rewrite for the whole scolarité obligatoire (cycles 1→4). SNES reports new cycle-4 maths programmes at BOEN. Confirm exact per-level application calendar in the arrêté body."
+    },
+    {
+     "title": "Arrêté du 9 novembre 2015 — horaires d'enseignement des écoles maternelles et élémentaires",
+     "url": "https://www.education.gouv.fr/bo/15/Hebdo44/MENE1526553A.htm",
+     "subjects": [
+      "tous enseignements (grille horaire)"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS",
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "ENUMERABLE horaires table — weekly/annual hours per domaine disciplinaire; 24h/semaine élémentaire, répartition par domaine (français, maths, EPS, langues, etc.)",
+     "bo_reference": "BOEN n°44 du 26 novembre 2015; Légifrance JORFTEXT000031518724",
+     "version_date": "En vigueur depuis rentrée 2016",
+     "pdf_url": "https://www.ipefdakar.org/IMG/pdf/3-Arrete_Horaires_BO_44_du_26_11_2015.pdf",
+     "notes": "Official weekly hours for primary. Elementary cycle 2: 10h/week language field; distributed by domaine disciplinaire with annual global volumes. PDF is an académie/AEFE mirror of the BO text."
+    },
+    {
+     "title": "Arrêté du 19 mai 2015 — organisation des enseignements dans les classes de collège (grille horaire collège)",
+     "url": "https://www.education.gouv.fr/bo/15/Hebdo22/MENE1511223A.htm",
+     "subjects": [
+      "tous enseignements (grille horaire)"
+     ],
+     "levels": [
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "ENUMERABLE horaires table — weekly hours per discipline per niveau, plus enseignements complémentaires (AP, EPI)",
+     "bo_reference": "BOEN n°22 du 28 mai 2015 (arrêté du 19-05-2015)",
+     "version_date": "En vigueur depuis rentrée 2016 (modifié arrêté 16-06-2017, MENE1717553A)",
+     "pdf_url": null,
+     "notes": "Official collège weekly hours per subject. Later modification MENE1717553A (BO 22 de 2017) relaxed EPI/parcours — verify current consolidated grid."
+    },
+    {
+     "title": "Arrêté du 16 juillet 2018 — organisation et volumes horaires de la classe de seconde GT",
+     "url": "https://www.education.gouv.fr/bo/18/Hebdo29/MENE1815610A.htm",
+     "subjects": [
+      "tous enseignements (grille horaire)"
+     ],
+     "levels": [
+      "2nde"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "ENUMERABLE horaires table (annexe 1) — enseignements communs + optionnels with weekly hours",
+     "bo_reference": "BOEN n°29 du 19 juillet 2018; Légifrance JORFTEXT000037202776",
+     "version_date": "En vigueur rentrée 2019 (réforme du lycée), modifié arrêté 2019 (MENE1910633A)",
+     "pdf_url": null,
+     "notes": "Seconde GT hours. Part of the 2018-2019 réforme du lycée package."
+    },
+    {
+     "title": "Arrêté du 16 juillet 2018 — organisation et volumes horaires du cycle terminal (1re/Tle) du bac général",
+     "url": "https://www.education.gouv.fr/bo/18/Hebdo29/MENE1815611A.htm",
+     "subjects": [
+      "tous enseignements (grille horaire)"
+     ],
+     "levels": [
+      "1re",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "ENUMERABLE horaires table — enseignements communs, de spécialité, optionnels with weekly hours",
+     "bo_reference": "BOEN n°29 du 19 juillet 2018; Légifrance JORFTEXT000037202800",
+     "version_date": "En vigueur rentrée 2019 (1re) / 2020 (Tle), modifié MENE1910633A",
+     "pdf_url": null,
+     "notes": "Cycle terminal (baccalauréat général) hours. Companion arrêté MENE1815612A (BO 29 2018) covers technological séries."
+    },
+    {
+     "title": "Arrêté du 16 juillet 2018 — volumes horaires des séries technologiques (ST2S, STL, STD2A, STI2D, STMG, STHR)",
+     "url": "https://www.education.gouv.fr/bo/18/Hebdo29/MENE1815612A.htm",
+     "subjects": [
+      "tous enseignements séries technologiques (grille horaire)"
+     ],
+     "levels": [
+      "1re",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "ENUMERABLE horaires tables per série technologique",
+     "bo_reference": "BOEN n°29 du 19 juillet 2018; Légifrance JORFTEXT000037202894",
+     "version_date": "En vigueur rentrée 2019/2020",
+     "pdf_url": null,
+     "notes": "Completes lycée horaires for the technological voie. Voie technologique is a parallel structure to voie générale within the cycle terminal."
+    }
+   ]
+  },
+  {
+   "key": "cycle-1-maternelle",
+   "segment": "CYCLE 1 — École maternelle (PS, MS, GS), ages 3-6",
+   "verification_verdict": "mostly_solid",
+   "subjects": [
+    "Mobiliser le langage dans toutes ses dimensions / Développement et structuration du langage oral et écrit",
+    "Acquérir/Acquisition des premiers outils mathématiques",
+    "Agir, s'exprimer, comprendre à travers l'activité physique (activités physiques)",
+    "Agir, s'exprimer, comprendre à travers les activités artistiques",
+    "Explorer le monde (temps, espace, vivant, matière, objets)",
+    "Éducation à la vie affective et relationnelle (EVAR) — from 2026"
+   ],
+   "coverage_assessment": "The full official cycle 1 curriculum IS reconstructable for both applicable versions. For rentrée 2025 (current year): the 2021 consolidated programme PDF (5 domaines, prose + a fully enumerable end-of-cycle 'attendus de fin d'école maternelle' list) plus the two 2024 revision annexes (langage + premiers outils mathématiques, BO n°41) that replace domaines 1 and 4. For rentrée 2026: the brand-new complete programme (arrêté 16 avril 2026, BO n°19, 6 domaines + EVAR) with age-banded 'exemples de réussite'. All arrêté references, BO numbers, Légifrance ID and direct PDF URLs are captured.",
+   "gaps": [
+    "education.gouv.fr and eduscol.education.gouv.fr return HTTP 403 to automated WebFetch; the direct PDF URLs are valid but were verified via search/mirror pages and curl, not by fetching education.gouv HTML directly. Confirm each PDF opens and matches the stated BO reference before ingesting.",
+    "The 2026 EVAR maternelle programme PDF direct URL was not isolated (only the umbrella BO n°19 page). Locate the dedicated EVAR annexe PDF.",
+    "The 2026 full programme's exact internal structure (whether it emits per-age competencies as clean discrete items vs prose paragraphs) needs confirmation by parsing annexe-...-516107.pdf directly.",
+    "The 'socle commun de connaissances, de compétences et de culture' does NOT apply to cycle 1 (it covers the scolarité obligatoire, cycles 2-4, from CP). No socle document belongs to this segment — cycle 1 has only its own programme + attendus.",
+    "Éduscol 'repères annuels de progression' (a formal per-year document family) do NOT exist for cycle 1 the way they do for cycles 2-3; maternelle uses end-of-cycle attendus (2021) then per-age exemples de réussite (2026). Accompagnement 'livrets' langage/mathématiques exist as pedagogical resources, not normative programme text.",
+    "The 2024 langage & maths annexe PDFs (403812 / 403815) may themselves be superseded by the 2026 programme's domaine 1 & 2 text; verify which version to treat as canonical per target rentrée."
+   ],
+   "documents": [
+    {
+     "title": "Programme d'enseignement de l'école maternelle (cycle 1) — version consolidée 2021",
+     "url": "https://eduscol.education.gouv.fr/4341/enseigner-au-cycle-1",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/programme-d-enseignement-du-cycle-1-80130.pdf",
+     "subjects": [
+      "Mobiliser le langage dans toutes ses dimensions",
+      "Agir, s'exprimer, comprendre à travers l'activité physique",
+      "Agir, s'exprimer, comprendre à travers les activités artistiques",
+      "Acquérir les premiers outils mathématiques",
+      "Explorer le monde"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "Prose pédagogique par domaine (définition + objectifs visés + repères pédagogiques), CLOTURÉ par une liste enumerable d'attendus de fin d'école maternelle pour chaque domaine",
+     "bo_reference": "BOEN n°25 du 24 juin 2021 (BOENJS n°25 du 24-6-2021)",
+     "version_date": "Rentrée 2021 (consolidé); reste le socle en vigueur pour l'année scolaire 2025-2026",
+     "notes": "Version consolidée qui intègre l'arrêté initial de 2015 et les modifications 2021. 5 domaines d'apprentissage. STATUT: base en vigueur pour la rentrée 2025 MAIS ses domaines 'langage' et 'premiers outils mathématiques' ont été remplacés dès la rentrée 2025 par l'arrêté du 30-09-2024 (BO n°41), et l'ENSEMBLE est abrogé/remplacé à la rentrée 2026 par le nouveau programme (arrêté 16-04-2026). PDF principal éduscol document/20062/download redirige vers ce fichier. Arrêté de modification 2021: MENE2116550A (education.gouv.fr/bo/21/Hebdo25/MENE2116550A.htm)."
+    },
+    {
+     "title": "Attendus de fin d'école maternelle (liste par domaine) — programme consolidé 2021",
+     "url": "https://eduscol.education.gouv.fr/4341/enseigner-au-cycle-1",
+     "pdf_url": "https://maternelles21.cir.ac-dijon.fr/wp-content/uploads/sites/45/2023/06/annexe1_attendus_fin_ecole_maternelle-1.pdf",
+     "subjects": [
+      "Mobiliser le langage dans toutes ses dimensions",
+      "Agir, s'exprimer, comprendre à travers l'activité physique",
+      "Agir, s'exprimer, comprendre à travers les activités artistiques",
+      "Acquérir les premiers outils mathématiques",
+      "Explorer le monde"
+     ],
+     "levels": [
+      "GS"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "HIGHLY ENUMERABLE — discrete bullet-point attendus (25+ items domaine 1 langage; 6 items EPS; 7 items artistique; ~25 items mathématiques split in 4.1 Découvrir les nombres / 4.2 Explorer formes-grandeurs-suites; explorer le monde). Ideal for structured extraction, one competency per line.",
+     "bo_reference": "BOEN n°25 du 24 juin 2021",
+     "version_date": "2021 — en vigueur année scolaire 2025-2026",
+     "notes": "The attendus are embedded in the consolidated 2021 programme PDF; the linked ac-dijon PDF is a clean extraction of the official list ('Programme consolidé 2021 – BO n°25 du 24-6-2021'). These are end-of-cycle (fin GS) attendus, not per-level. Superseded conceptually at rentrée 2026 by 'exemples de réussite' déclinés par âge."
+    },
+    {
+     "title": "Programme d'enseignement pour le développement et la structuration du langage oral et écrit de l'école maternelle (cycle 1) — Annexe 1 (révision 2024)",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo41/MENE2415135A",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%201%20%E2%80%93%20Programme%20d%E2%80%98enseignement%20pour%20le%20d%C3%A9veloppement%20et%20la%20structuration%20du%20langage%20oral%20et%20%C3%A9crit%20du%20cycle%201-403812.pdf",
+     "subjects": [
+      "Développement et structuration du langage oral et écrit"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Prose structurée + objectifs; renforcement du vocabulaire explicite et de la conscience phonologique. Contient des attendus/repères plus détaillés que 2021. Enumerable objectives.",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024",
+     "version_date": "Entrée en vigueur rentrée 2025 (année scolaire 2025-2026)",
+     "notes": "Arrêté du 30 septembre 2024 (MENE2415135A). Remplace le domaine 'Mobiliser le langage' du programme 2021 pour cycle 1. Le même arrêté couvre AUSSI le français du cycle 2. STATUT: en vigueur rentrée 2025 mais remplacé à la rentrée 2026 par le nouveau programme complet (arrêté 16-04-2026). education.gouv.fr renvoie 403 au WebFetch mais les URLs PDF sont valides."
+    },
+    {
+     "title": "Programme d'enseignement pour l'acquisition des premiers outils mathématiques de l'école maternelle (cycle 1) — Annexe 2 (révision 2024)",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo41/MENE2415135A",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%202%20%E2%80%93%20Programme%20d%E2%80%99enseignement%20pour%20l%E2%80%99acquisition%20des%20premiers%20outils%20math%C3%A9matiques%20du%20cycle%201-403815.pdf",
+     "subjects": [
+      "Acquisition des premiers outils mathématiques"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Prose + objectifs enumerable; stabilisation des petits nombres, décomposition/comparaison, résolution de problèmes quotidienne. More granular than 2021.",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024",
+     "version_date": "Entrée en vigueur rentrée 2025 (année scolaire 2025-2026)",
+     "notes": "Arrêté du 30 septembre 2024 (MENE2415135A). Remplace le domaine 'Acquérir les premiers outils mathématiques' du programme 2021 pour cycle 1. Le même arrêté couvre aussi les mathématiques du cycle 2. Remplacé à la rentrée 2026 par le nouveau programme complet."
+    },
+    {
+     "title": "Programme d'enseignement de l'école maternelle (cycle 1) — NOUVEAU programme complet 2026",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo19/MENE2608627A",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/annexe-programme-d-enseignement-de-l-ecole-maternelle-cycle-1-516107.pdf",
+     "subjects": [
+      "Le développement et la structuration du langage oral et écrit",
+      "L'acquisition des premiers outils mathématiques",
+      "Agir, s'exprimer, comprendre à travers les activités physiques",
+      "Agir, s'exprimer, comprendre à travers les activités artistiques",
+      "Se repérer dans le temps et l'espace",
+      "Découvrir le monde du vivant, de la matière et des objets"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "entering_force_2026",
+     "format": "both",
+     "granularity": "Structure homogène pour les 6 domaines: objectifs + 'exemples de réussite' DÉCLINÉS PAR ÂGE (avant 4 ans / à partir de 4 ans / à partir de 5 ans) — remplace la nomenclature PS/MS/GS et les 'attendus de fin de cycle' par des repères par âge. Enumerable par âge, très exploitable.",
+     "bo_reference": "BOEN n°19 du 7 mai 2026 (arrêté du 16 avril 2026, MENE2608627A)",
+     "version_date": "Entrée en vigueur rentrée 2026 (année scolaire 2026-2027)",
+     "notes": "Refonte complète: passe de 5 à 6 domaines en scindant l'ancien 'Explorer le monde' en 'Se repérer dans le temps et l'espace' + 'Découvrir le monde du vivant, de la matière et des objets'. Conserve les 4 modalités d'apprentissage (jouer, résoudre des problèmes, s'exercer, mémoriser). Légifrance: arrêté du 16 avril 2026, JORFTEXT000054037379 (https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054037379). Remplace intégralement le programme 2021 ET les annexes 2024. education.gouv 403 au WebFetch."
+    },
+    {
+     "title": "Programme d'éducation à la vie affective et relationnelle (EVAR) à l'école maternelle",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo19/MENE2608627A",
+     "pdf_url": null,
+     "subjects": [
+      "Éducation à la vie affective et relationnelle (EVAR)"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "entering_force_2026",
+     "format": "pdf",
+     "granularity": "Programme transversal complémentaire aux 6 domaines; prose + objectifs. Granularité à confirmer sur le PDF officiel.",
+     "bo_reference": "Associé au BOEN n°19 du 7 mai 2026 / programmes 2026",
+     "version_date": "Rentrée 2026",
+     "notes": "Première mention explicite d'un programme EVAR en maternelle, en complément des 6 domaines. Renforce compétences psychosociales, inclusion, égalité filles-garçons. PDF dédié à localiser sur education.gouv.fr / éduscol."
+    },
+    {
+     "title": "Éduscol — Enseigner au cycle 1 (page ressources officielle)",
+     "url": "https://eduscol.education.gouv.fr/4341/enseigner-au-cycle-1",
+     "pdf_url": null,
+     "subjects": [
+      "Tous domaines cycle 1"
+     ],
+     "levels": [
+      "PS",
+      "MS",
+      "GS"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Page portail: liens vers les programmes en vigueur (rentrée 2025 et 2026), ressources d'accompagnement (livrets langage et mathématiques), guides. Navigation, pas de compétences enumerable en soi.",
+     "bo_reference": null,
+     "version_date": "2025-2026",
+     "notes": "Ancienne URL eduscol.education.fr/83/j-enseigne-au-cycle-1 redirige (301) vers eduscol.education.gouv.fr/4341/enseigner-au-cycle-1. Le domaine eduscol.education.gouv.fr et education.gouv.fr renvoient 403 au WebFetch automatisé; les PDFs directs restent téléchargeables via curl avec User-Agent."
+    }
+   ]
+  },
+  {
+   "key": "cycle-2",
+   "segment": "CYCLE 2 — CP, CE1, CE2 (cycle des apprentissages fondamentaux, ages 6-9)",
+   "verification_verdict": "solid",
+   "subjects": [
+    "Français",
+    "Mathématiques",
+    "Langues vivantes étrangères et régionales",
+    "Éducation physique et sportive (EPS)",
+    "Enseignements artistiques (arts plastiques + éducation musicale)",
+    "Questionner le monde (→ Sciences et technologie à partir de 2026)",
+    "Enseignement moral et civique (EMC)"
+   ],
+   "coverage_assessment": "The full official Cycle 2 curriculum can be reconstructed for the two core subjects (français, mathématiques) at high, per-level granularity from the 2024 arrêté annexe PDFs (403818, 403821), which are directly downloadable and contain enumerable attendus de fin d'année and connaissances/compétences. The non-core subjects (EPS, enseignements artistiques, questionner le monde, LVE) are reconstructible for the in-force rentrée-2025 state from the consolidated 2015/2020 cycle 2 arrêté (MENE1526483A), plus their 2026 successor arrêtés (LVE MENE2602911A, EPS MENE2608631A, sciences et technologie MENE2611650A) which are entering force progressively (CP 2026, CE1/CE2 2027). EMC is covered by the 2024 arrêté (phased CP2024/CE1 2025/CE2 2026). The socle commun provides the framework layer. Main obstacle: education.gouv.fr and eduscol.education.gouv.fr return HTTP 403 to automated fetching, so annexe PDFs must be pulled via the /sites/default/files or /media/{id}/download and eduscol /document/{id}/download endpoints rather than by scraping the HTML index pages.",
+   "gaps": [
+    "education.gouv.fr /bo/ pages and eduscol.education.gouv.fr all return HTTP 403 to WebFetch; the éduscol HTML index pages (enseigner-au-cycle-2, /6910 attendus, per-subject ressources) could not be enumerated directly — the exhaustive per-subject PDF/download-ID inventory needs a browser or the raw download endpoints.",
+    "Exact BO article slug for the 2024 EMC arrêté (MENE24xxxxxA in BO n°24/2024) not verified; Légifrance JORFTEXT000049694961 is the authoritative fallback.",
+    "Direct annexe PDF URLs for the 2026 arrêtés (LVE cycle 2 confirmed = 481187.pdf; EPS and sciences-et-technologie cycle 2 annexe PDF filenames not captured) still need collection from the BO index pages.",
+    "Whether the standalone 2019 éduscol 'attendus de fin d'année / repères annuels' documents for français & maths are still published or fully replaced by the per-level 2025 programmes is unresolved (the 403 blocked confirmation on the live /6910 page).",
+    "Enseignements artistiques cycle 2: only a DRAFT (projet CSP, juillet 2025) exists for a rewrite planned rentrée 2027; the 2015/2020 programme remains the sole in-force text and no successor arrêté is published yet."
+   ],
+   "documents": [
+    {
+     "title": "Arrêté du 22 octobre 2024 — Programmes de français et de mathématiques du cycle 2 (et langage/premiers outils maths du cycle 1)",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo41/MENE2415135A",
+     "pdf_url": null,
+     "subjects": [
+      "Français",
+      "Mathématiques"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Landing arrêté (HTML) linking the two annexe PDFs; the annexes themselves are per-level (CP/CE1/CE2) with enumerable attendus de fin d'année, connaissances et compétences associées, and repères de progression.",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024 (arrêté du 22-10-2024, MENE2415135A)",
+     "version_date": "Rentrée 2025-2026 (in force all levels CP/CE1/CE2 since Sept 2025)",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000050395251 . Supersedes the français & maths parts of the 2015/2020 cycle 2 programme. New graphemic reading approach, fractions & decimals introduced from CE1."
+    },
+    {
+     "title": "Annexe 3 — Programme de français du cycle 2 (avril 2024, en vigueur rentrée 2025)",
+     "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%203%20%E2%80%93%20Programme%20de%20fran%C3%A7ais%20du%20cycle%202-403818.pdf",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%203%20%E2%80%93%20Programme%20de%20fran%C3%A7ais%20du%20cycle%202-403818.pdf",
+     "subjects": [
+      "Français"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "Highly structured, per-level (CP/CE1/CE2). 5 thematic strands; enumerable attendus de fin d'année, connaissances/compétences, and examples of success. Excellent for atom extraction.",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024 (annexe de MENE2415135A)",
+     "version_date": "Rentrée 2025",
+     "notes": "Mirror download URL: https://www.education.gouv.fr/media/194199/download"
+    },
+    {
+     "title": "Annexe 4 — Programme de mathématiques du cycle 2 (avril 2024, en vigueur rentrée 2025)",
+     "url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%204%20%E2%80%93%20Programme%20de%20math%C3%A9matiques%20du%20cycle%202-403821.pdf",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%204%20%E2%80%93%20Programme%20de%20math%C3%A9matiques%20du%20cycle%202-403821.pdf",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "Highly structured, per-level (CP/CE1/CE2). Themes (nombres et calculs, grandeurs et mesures, espace et géométrie, organisation de données); enumerable attendus de fin d'année + connaissances/compétences. Excellent for extraction.",
+     "bo_reference": "BOEN n°41 du 31 octobre 2024 (annexe de MENE2415135A)",
+     "version_date": "Rentrée 2025",
+     "notes": "Mirror download URL: https://www.education.gouv.fr/media/194205/download"
+    },
+    {
+     "title": "Arrêté du 9 novembre 2015 — Programmes d'enseignement du cycle 2 (version consolidée, ajustements 2018/2020) — annexe cycle 2",
+     "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe1.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignements artistiques (arts plastiques + éducation musicale)",
+      "Questionner le monde",
+      "Éducation physique et sportive (EPS)",
+      "Langues vivantes étrangères et régionales"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Cycle-level (not annualized). Per subject: attendus de fin de cycle + 'compétences travaillées' + connaissances/compétences associées — enumerable but coarser than the new per-level programmes. This is the residual in-force text for the subjects not yet rewritten (arts, EPS, questionner le monde, LVE) for rentrée 2025.",
+     "bo_reference": "BO spécial n°11 du 26 novembre 2015 (arrêté du 9-11-2015, MENE1526483A), modifié arrêté 17-7-2018 (BO n°30 du 26-7-2018) et ajustements BOEN n°31 du 30 juillet 2020",
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "version_date": "Version consolidée 2020; still governs arts / EPS / questionner le monde / LVE until the 2026-2027 phased rewrites",
+     "notes": "Consolidated 'Programmes pour les cycles 2, 3, 4' full PDF: https://www.education.gouv.fr/media/48461/download . The français, maths and EMC parts of this 2015/2020 text are now SUPERSEDED (by the 2024 programmes); the arts/EPS/QLM/LVE parts remain in force."
+    },
+    {
+     "title": "Arrêté du 29 mai 2024 — Programme d'enseignement moral et civique (EMC), du CP à la terminale",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo24/MENE2415223A",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Annualized per-level content organized by culture domains (sensibilité, droit/règle, engagement, jugement) with attendus per level. Enumerable. Phased-in, so by rentrée 2026 all of CP/CE1/CE2 run the new EMC.",
+     "bo_reference": "BOEN n°24 du 13 juin 2024 (arrêté du 29-5-2024)",
+     "version_date": "Phased: CP rentrée 2024, CE1 rentrée 2025, CE2 rentrée 2026",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049694961 . Supersedes the EMC section of the 2015/2018 programme. NOTE: exact BO article slug (MENE24xxxxxA) should be confirmed on the BO n°24/2024 index; Légifrance link is authoritative."
+    },
+    {
+     "title": "Arrêté du 12 mars 2026 — Programmes de langues vivantes étrangères et régionales pour l'école élémentaire (cycle 2 + CM1/CM2)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo12/MENE2602911A",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%201%20%E2%80%93%20Programme%20de%20langues%20vivantes%20%C3%A9trang%C3%A8res%20et%20r%C3%A9gionales%20pour%20le%20cycle%202%20-481187.pdf",
+     "subjects": [
+      "Langues vivantes étrangères et régionales"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "entering_force_2026",
+     "format": "both",
+     "granularity": "New per-level annualized LVE programme (examples in English, transferable to all languages). Structured by activités langagières / actes de parole with attendus. Good for extraction. Annexe 1 PDF = cycle 2.",
+     "bo_reference": "BOEN n°12 du 19 mars 2026 (MENE2602911A)",
+     "version_date": "Phased: CP rentrée 2026-2027; CE1 & CE2 rentrée 2027-2028",
+     "notes": "Until phase-in, the in-force LVE text for cycle 2 is the 2015 programme (see arrêté 9-11-2015 row). For rentrée 2025 the primary/cycle-2 LVE was NOT renewed (the BO n°22 du 29 mai 2025 LVE reform was collège/lycée only)."
+    },
+    {
+     "title": "Arrêté du 22 avril 2026 — Programmes d'EPS du cycle 2 (et EPS/histoire-géographie du cycle 3)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A",
+     "pdf_url": null,
+     "subjects": [
+      "Éducation physique et sportive (EPS)"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "entering_force_2026",
+     "format": "html",
+     "granularity": "New annualized EPS programme replacing the EPS section of the 2015 arrêté. Structured by champs d'apprentissage with attendus. Enumerable.",
+     "bo_reference": "BOEN n°22 du 28 mai 2026 (arrêté du 22-4-2026, MENE2608631A)",
+     "version_date": "Phased: CP rentrée 2026-2027; CE1 & CE2 rentrée 2027-2028",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054048160 . Until phase-in, EPS cycle 2 is governed by the 2015/2020 programme."
+    },
+    {
+     "title": "Arrêté du 5 juin 2026 — Programmes de sciences et technologie des cycles 2 et 3 (remplace 'Questionner le monde' au cycle 2)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo24/MENE2611650A",
+     "pdf_url": null,
+     "subjects": [
+      "Questionner le monde (→ Sciences et technologie à partir de 2026)"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "entering_force_2026",
+     "format": "html",
+     "granularity": "New annualized 'sciences et technologie' programme; removes the 'Questionner le monde' section of the 2015 arrêté at cycle 2. Structured per level with attendus. Enumerable.",
+     "bo_reference": "BOEN n°24 du 11 juin 2026 (arrêté du 5-6-2026, MENE2611650A)",
+     "version_date": "Phased: CP rentrée 2026-2027; CE1 & CE2 rentrée 2027-2028",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054218988 . Until phase-in, 'Questionner le monde' (2015/2020 programme) remains in force for cycle 2."
+    },
+    {
+     "title": "Repères annuels de progression et attendus de fin d'année du CP à la 3e (portail éduscol)",
+     "url": "https://eduscol.education.gouv.fr/6910/reperes-annuels-de-progression-et-attendus-de-fin-d-annee-du-cp-la-troisieme",
+     "pdf_url": "https://eduscol.education.fr/document/13936/download",
+     "subjects": [
+      "Français",
+      "Mathématiques"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "unclear",
+     "format": "pdf",
+     "granularity": "Per-level, per-subject PDF tables of attendus de fin d'année + repères annuels de progression (français, maths; also EMC/LVE). Highly enumerable. NOTE: the original 2019 set (note MENE1913283N) is largely absorbed into the 2025 per-level programmes for français/maths; verify which version éduscol currently serves.",
+     "bo_reference": "Note de service n°2019-072 du 28-5-2019 (BOEN n°22 du 30 mai 2019, MENE1913283N) for the original 2019 edition",
+     "version_date": "2019 edition; being superseded/absorbed by the 2024-2025 programmes which embed per-level attendus",
+     "notes": "Éduscol download IDs (e.g. /document/13936/download = CP maths attendus). Landing page /137 redirects to /6910. education.gouv.fr and eduscol.education.gouv.fr block automated fetch (HTTP 403), so exact current file inventory must be confirmed via the download endpoints or a browser."
+    },
+    {
+     "title": "Socle commun de connaissances, de compétences et de culture (décret n°2015-372 du 31 mars 2015)",
+     "url": "https://www.education.gouv.fr/bo/15/Hebdo17/MENE1506516D.htm",
+     "pdf_url": "https://cache.media.education.gouv.fr/file/17/45/6/Socle_commun_de_connaissances,_de_competences_et_de_culture_415456.pdf",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères et régionales",
+      "Éducation physique et sportive (EPS)",
+      "Enseignements artistiques (arts plastiques + éducation musicale)",
+      "Questionner le monde (→ Sciences et technologie à partir de 2026)",
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Framework prose organized in 5 domains covering the full compulsory-schooling span (ages 6-16). Cross-cutting, NOT a per-subject/per-level competency list — summary/framework rather than fine-grained attendus. Useful as taxonomy top-level, not for leaf extraction.",
+     "bo_reference": "BOEN n°17 du 23 avril 2015 (décret n°2015-372 du 31-3-2015, MENE1506516D)",
+     "version_date": "En vigueur depuis rentrée 2016; toujours en vigueur (2026)",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000030426718"
+    }
+   ]
+  },
+  {
+   "key": "cycle-3",
+   "segment": "CYCLE 3 — CM1, CM2, 6e (cycle de consolidation, ages 9-12)",
+   "verification_verdict": "solid",
+   "subjects": [
+    "Français",
+    "Mathématiques",
+    "Langues vivantes étrangères et régionales",
+    "Sciences et technologie",
+    "Histoire-géographie",
+    "Enseignement moral et civique (EMC)",
+    "Éducation physique et sportive (EPS)",
+    "Enseignements artistiques (arts plastiques, éducation musicale, histoire des arts)",
+    "Éducation à la vie affective et relationnelle et à la sexualité (EVAR/EVARS)",
+    "Français et culture antique (enseignement facultatif, 6e uniquement)"
+   ],
+   "coverage_assessment": "The full official cycle 3 curriculum can be reconstructed, but only by assembling documents across a live transition: cycle 3 is mid-reform in 2025-2027, so several subjects have DIFFERENT in-force arrêtés depending on the level (CM1 vs CM2 vs 6e). Français and mathématiques (2025 reform, BO n°16) and their attendus/exemples de réussite are fully captured with direct PDFs and are highly extractable at per-level, per-domain granularity. All other subjects are covered via the canonical éduscol index (page 4356), the consolidated 2020/2023 cycle 3 PDF (still authoritative for arts and for CM2/6e in HG/EPS/LV/sciences), the socle commun decree, and the repères/attendus page — though several 2026 reform arrêtés still need their direct PDF links captured.",
+   "gaps": [
+    "Direct arrêté URLs and annexe PDF links for the 2026 reform programmes are not yet captured: sciences et technologie (BO n°24 du 11 juin 2026, CM1), EPS + histoire-géographie (BO n°22 du 28 mai 2026, arrêté MENE2608631A, CM1), langues vivantes étrangères/régionales (BO n°12 du 19 mars 2026, CM1). Follow-up: fetch education.gouv.fr/bo/2026 Hebdo pages.",
+    "The 6e LV étrangères programme (BO n°22 du 29 mai 2025) and 6e LV régionales (BO n°21 du 21 mai 2026) need arrêté NOR + PDF; LV is the most level-fragmented subject (4 distinct BO references across CM1/CM2/6e).",
+    "The standalone 'attendus de fin d'année' PDFs on page 6910 (fin de CM1/CM2/6e) are the 2019-origin versions tied to the 2020/2023 programmes; for CM1 and 6e français/maths the authoritative attendus are now embedded inside the 2025 reform programmes. Extraction must not double-source — prefer the 2025 programme PDFs for CM1/6e français-maths.",
+    "Direct PDFs for EMC 2024 (BO n°24) and EVAR/EVARS 2025 (BO n°6) not individually captured — only referenced via the éduscol index; fetch the two BO arrêtés for annexe PDFs.",
+    "Whether a rénovation of the socle commun (announced as 'en cours') publishes before rentrée 2026 is unconfirmed; current decree 2015-372 remains in force.",
+    "Optional 'Français et culture antique' (FCA, enseignement facultatif de 6e) programme reference/PDF not captured — low priority but part of the 6e offer."
+   ],
+   "documents": [
+    {
+     "title": "Enseigner au cycle 3 — tableau officiel des programmes en application (rentrée 2026-2027)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères et régionales",
+      "Sciences et technologie",
+      "Histoire-géographie",
+      "Enseignement moral et civique (EMC)",
+      "Éducation physique et sportive (EPS)",
+      "Enseignements artistiques (arts plastiques, éducation musicale, histoire des arts)",
+      "Éducation à la vie affective et relationnelle et à la sexualité (EVAR/EVARS)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "summary only — canonical index page (per-subject / per-level table with BO references and NOUVEAU flags); links out to each programme PDF and ressources d'accompagnement",
+     "bo_reference": null,
+     "pdf_url": null,
+     "version_date": "Rentrée 2026-2027 (page updated 2026)",
+     "notes": "MASTER INDEX for cycle 3. Table gives the in-force BO reference for each subject AND each level (CM1/CM2/6e differ during the 2025-2027 transition). Cycle 3 spans école (CM1/CM2) and collège (6e)."
+    },
+    {
+     "title": "Programme d'enseignement de français du cycle 3 (réforme 2025)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo16/MENE2504620A",
+     "subjects": [
+      "Français"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "attendus lists + per-level competencies — structured by level (CM1/CM2/6e) and domain (lecture, écriture, oral, étude de la langue, culture littéraire et artistique) with explicit attendus; highly extractable",
+     "bo_reference": "BOEN n°16 du 17 avril 2025 ; arrêté du 10-4-2025 (NOR MENE2504620A), JO du 16-4-2025",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/programme-de-fran-ais-pour-le-cycle-3-439824.pdf",
+     "version_date": "En vigueur: CM1 et 6e à la rentrée 2025-2026 ; CM2 à la rentrée 2026-2027",
+     "notes": "New reform programme. Replaces the français part of annexe 2 of the arrêté du 9-11-2015. Ancien programme (BO n°31 du 30 juillet 2020) restait en vigueur pour le CM2 en 2025-2026. PDF ~334 Ko."
+    },
+    {
+     "title": "Programme d'enseignement de mathématiques du cycle 3 (réforme 2025)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo16/MENE2504620A",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "per-level competency codes / attendus — by level (CM1/CM2/6e) and domain (Nombres-calcul-résolution de problèmes, Grandeurs et mesures, Espace et géométrie, Organisation et gestion de données et probabilités); highly extractable",
+     "bo_reference": "BOEN n°16 du 17 avril 2025 ; arrêté du 10-4-2025 (NOR MENE2504620A), JO du 16-4-2025",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/programme-de-math-matiques-pour-le-cycle-3-439827.pdf",
+     "version_date": "En vigueur: CM1 et 6e à la rentrée 2025-2026 ; CM2 à la rentrée 2026-2027",
+     "notes": "New reform programme, same arrêté as français. Résolution de problèmes as pivot; fractions from CM1. 'Exemples de réussite' CM1/CM2/6e published separately. PDF ~515 Ko."
+    },
+    {
+     "title": "Ressources d'accompagnement du programme de mathématiques au cycle 3 (exemples de réussite par niveau)",
+     "url": "https://eduscol.education.gouv.fr/5712/ressources-d-accompagnement-du-programme-de-mathematiques-au-cycle-3",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "attendus/exemples lists — 'Exemples pour la classe de CM1/CM2/6e' PDFs give concrete success criteria per objective; thematic docs (Fractions, Calcul mental, Résolution de problèmes)",
+     "bo_reference": "Accompagne le BOEN n°16 du 17 avril 2025",
+     "pdf_url": null,
+     "version_date": "Rentrée 2025-2026 onward",
+     "notes": "Companion to the 2025 maths programme. Per-level 'exemples de réussite' (CM1 ~1.52 Mo, CM2 ~1.58 Mo, 6e ~1.38 Mo) operationalise the attendus."
+    },
+    {
+     "title": "Repères annuels de progression et attendus de fin d'année du CP à la 3e (section cycle 3)",
+     "url": "https://eduscol.education.gouv.fr/6910/reperes-annuels-de-progression-et-attendus-de-fin-d-annee-du-cp-la-troisieme",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Enseignement moral et civique (EMC)",
+      "Langues vivantes étrangères et régionales"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "attendus de fin d'année lists (fin de CM1, fin de CM2, fin de 6e) + repères annuels de progression (per cycle) — enumerable objectives with 'exemples de réussite'; most extraction-friendly artifacts",
+     "bo_reference": "Origine BOEN n°22 du 29 mai 2019 (note MENE1913283N) ; page éduscol mise à jour rentrée 2025",
+     "pdf_url": null,
+     "version_date": "Rentrée 2025 — documents liés aux programmes 2020/2023; applicables en français/maths en CM2. Pour CM1/6e les attendus sont désormais intégrés aux programmes 2025.",
+     "notes": "Downloadable PDFs: attendus fin de CM1 (ensel283_annexe8), fin de CM2, fin de 6e (annexe12); repères annuels cycle 3 français (annexe22), maths (annexe23), EMC (annexe24). CAUTION: predate the 2025 français/maths reform — for CM1/6e prefer attendus embedded in the 2025 programmes. BO note: https://www.education.gouv.fr/bo/19/Hebdo22/MENE1913283N.htm"
+    },
+    {
+     "title": "Programme d'enseignement du cycle 3 — version consolidée 2020+2023 (arrêté du 9-11-2015 modifié)",
+     "url": "https://eduscol.education.gouv.fr/sites/default/files/document/programme-d-enseignement-du-cycle-3-2023-100806.pdf",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères et régionales",
+      "Sciences et technologie",
+      "Histoire-géographie",
+      "Enseignement moral et civique (EMC)",
+      "Éducation physique et sportive (EPS)",
+      "Enseignements artistiques (arts plastiques, éducation musicale, histoire des arts)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "superseded",
+     "format": "pdf",
+     "granularity": "attendus de fin de cycle + connaissances/compétences associées per domain — 'attendus de fin de cycle' and 'compétences travaillées' tables; enumerable but at cycle granularity (not per year)",
+     "bo_reference": "BOEN n°31 du 30 juillet 2020 (arrêté 9-11-2015 modifié) + BOEN n°25 du 22 juin 2023 (sciences et technologie)",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/programme-d-enseignement-du-cycle-3-2023-100806.pdf",
+     "version_date": "Rentrée 2020 (français/maths part superseded by 2025 reform; other subjects still current)",
+     "notes": "Single umbrella document, all subjects in one PDF. Its français and mathématiques parts were SUPPRESSED by arrêté 10-4-2025 (art. 2). Remains authoritative for arts, and for CM2/6e in HG/EPS/LV/sciences."
+    },
+    {
+     "title": "Programme de sciences et technologie du cycle 3 (2023)",
+     "url": "https://www.education.gouv.fr/bo/2023/Hebdo25",
+     "subjects": [
+      "Sciences et technologie"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "attendus + connaissances/compétences per thématique — 4 thématiques (Matière-mouvement-énergie-information; Le vivant; Objets techniques; La Terre) with 'attendus de fin de cycle'; enumerable at cycle level",
+     "bo_reference": "BOEN n°25 du 22 juin 2023",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%93%20Programme%20de%20sciences%20et%20technologie%20du%20cycle%203-365166.pdf",
+     "version_date": "Rentrée 2023 — reste en vigueur pour CM2 et 6e à la rentrée 2026-2027",
+     "notes": "In force for CM2 and 6e. NEW sciences programme (BOEN n°24 du 11 juin 2026) applies to CM1 from rentrée 2026-2027, rolls out to CM2/6e in 2027-2028. Mirror PDF: https://sti.eduscol.education.fr/sites/eduscol.education.fr.sti/files/textes/college/cycle-3/16806-cycle3-sc-et-techno-juin-2023.pdf"
+    },
+    {
+     "title": "Programme de sciences et technologie du cycle 3 (réforme 2026)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Sciences et technologie"
+     ],
+     "levels": [
+      "CM1"
+     ],
+     "status": "entering_force_2026",
+     "format": "html",
+     "granularity": "not yet verified — expected attendus/competency structure like other reform programmes",
+     "bo_reference": "BOEN n°24 du 11 juin 2026",
+     "pdf_url": null,
+     "version_date": "En vigueur: CM1 à la rentrée 2026-2027 ; CM2 et 6e à la rentrée 2027-2028",
+     "notes": "GAP: direct BO arrêté URL and PDF not yet captured. Flagged NOUVEAU in the éduscol cycle 3 table. Follow-up: fetch BO 2026 Hebdo24."
+    },
+    {
+     "title": "Programmes d'EPS et d'histoire-géographie des cycles 2 et 3 (réforme 2026)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A",
+     "subjects": [
+      "Éducation physique et sportive (EPS)",
+      "Histoire-géographie"
+     ],
+     "levels": [
+      "CM1"
+     ],
+     "status": "entering_force_2026",
+     "format": "both",
+     "granularity": "not yet verified in detail — reform programmes, expected per-level/attendus structure",
+     "bo_reference": "BOEN n°22 du 28 mai 2026 (arrêté NOR MENE2608631A)",
+     "pdf_url": null,
+     "version_date": "En vigueur: CM1 à la rentrée 2026-2027 (rollout to CM2/6e later)",
+     "notes": "Single arrêté covering both EPS and histoire-géographie for cycles 2 and 3. Applies to CM1 from rentrée 2026. For CM2/6e, EPS and HG remain BOEN n°31 du 30 juillet 2020. GAP: annexe PDF URLs not captured."
+    },
+    {
+     "title": "Histoire-géographie cycle 3 — programme 2020 (en vigueur CM2/6e) + ressources",
+     "url": "https://eduscol.education.gouv.fr/4791/ressources-d-accompagnement-du-programme-d-histoire-et-geographie-au-cycle-3",
+     "subjects": [
+      "Histoire-géographie"
+     ],
+     "levels": [
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "thèmes + repères annuels — year-level themes (CM1/CM2/6e) with competencies; text in consolidated 2020/2023 PDF",
+     "bo_reference": "BOEN n°31 du 30 juillet 2020",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/programme-d-enseignement-du-cycle-3-2023-100806.pdf",
+     "version_date": "Rentrée 2020 — en vigueur pour CM2 et 6e à la rentrée 2026-2027 (CM1 basculé sur le programme 2026)",
+     "notes": "Ressources d'accompagnement page; programme text lives in the consolidated cycle 3 PDF. Being progressively replaced by BO n°22 du 28 mai 2026 starting at CM1."
+    },
+    {
+     "title": "Programmes de langues vivantes étrangères et régionales cycle 3 (transition multi-niveaux)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Langues vivantes étrangères et régionales"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "attendus CECRL + activités langagières — per-level attendus adossés au CECRL (A1/A2); attendus de fin d'année en anglais/allemand/espagnol/italien; enumerable",
+     "bo_reference": "CM1: BOEN n°12 du 19 mars 2026 (NOUVEAU) | CM2: BOEN n°31 du 30 juillet 2020 | 6e LV étrangères: BOEN n°22 du 29 mai 2025 | 6e LV régionales: BOEN n°21 du 21 mai 2026 (NOUVEAU)",
+     "pdf_url": null,
+     "version_date": "Multi-version by level (see BO references) — état rentrée 2026-2027",
+     "notes": "MOST FRAGMENTED subject: four different BO references across the three levels. Attendus de fin d'année LV downloadable from page 6910. GAP: direct PDFs for BO 12/2026, 22/2025, 21/2026 not captured."
+    },
+    {
+     "title": "Programme d'enseignement moral et civique (EMC) cycles 2, 3 et 4 (2024)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "connaissances/compétences + repères annuels — structured by finalités and objets d'enseignement; repères annuels applicables en CE2/6e/3e; enumerable",
+     "bo_reference": "BOEN n°24 du 13 juin 2024",
+     "pdf_url": null,
+     "version_date": "En vigueur au cycle 3 (6e marquée NOUVEAU pour rentrée 2026-2027)",
+     "notes": "New EMC programme (2024) replaced the 2015/2018 version. Applies across CM1/CM2/6e; 6e flagged NOUVEAU. Repères annuels EMC on page 6910. GAP: direct BO arrêté PDF not individually captured."
+    },
+    {
+     "title": "Enseignements artistiques cycle 3 — arts plastiques, éducation musicale, histoire des arts (2020)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Enseignements artistiques (arts plastiques, éducation musicale, histoire des arts)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "pdf",
+     "granularity": "attendus de fin de cycle + compétences travaillées — per-domain competencies at cycle granularity; text in consolidated 2020/2023 PDF; enumerable",
+     "bo_reference": "BOEN n°31 du 30 juillet 2020",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/programme-d-enseignement-du-cycle-3-2023-100806.pdf",
+     "version_date": "Rentrée 2020 — en vigueur pour tous les niveaux du cycle 3 (aucune réforme 2025/2026 annoncée)",
+     "notes": "Only cycle 3 subject family NOT touched by the 2024-2026 reform wave. Three sub-disciplines within the consolidated cycle 3 programme PDF."
+    },
+    {
+     "title": "Programmes d'éducation à la vie affective et relationnelle (et à la sexualité) — EVAR/EVARS (2025)",
+     "url": "https://eduscol.education.gouv.fr/4356/enseigner-au-cycle-3",
+     "subjects": [
+      "Éducation à la vie affective et relationnelle et à la sexualité (EVAR/EVARS)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "objectifs par niveau — structured objectives; EVAR at CM1/CM2 (école), EVARS at 6e (collège); enumerable",
+     "bo_reference": "BOEN n°6 du 6 février 2025",
+     "pdf_url": null,
+     "version_date": "Rentrée 2025-2026",
+     "notes": "New transversal programme. EVAR (vie affective et relationnelle) at CM1/CM2; EVARS (+ sexualité) at 6e. Ressources: 'Mettre en oeuvre le programme EVAR/EVARS'. GAP: direct BO arrêté PDF not captured."
+    },
+    {
+     "title": "Socle commun de connaissances, de compétences et de culture",
+     "url": "https://eduscol.education.gouv.fr/4761/le-socle-commun-de-connaissances-de-competences-et-de-culture",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères et régionales",
+      "Sciences et technologie",
+      "Histoire-géographie",
+      "Enseignement moral et civique (EMC)",
+      "Éducation physique et sportive (EPS)",
+      "Enseignements artistiques (arts plastiques, éducation musicale, histoire des arts)"
+     ],
+     "levels": [
+      "CM1",
+      "CM2",
+      "6e"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "5 domaines de formation (prose) — cross-cutting competency framework the programmes reference; prose + domain structure, not per-year attendus. A cycle-3 évaluation companion lists niveaux de maîtrise per domain (enumerable).",
+     "bo_reference": "Décret n°2015-372 du 31 mars 2015 modifié (NOR MENE1506516D), annexe modifiée en août 2019",
+     "pdf_url": "http://cache.media.education.gouv.fr/file/17/45/6/Socle_commun_de_connaissances,_de_competences_et_de_culture_415456.pdf",
+     "version_date": "En vigueur depuis la rentrée 2016 ; définition toujours en vigueur (rénovation annoncée mais non publiée)",
+     "notes": "Over-arching reference (5 domaines) for all cycles. Companion cycle-3 évaluation doc (niveau de maîtrise satisfaisant fin de cycle 3, per-domain enumerable): https://eduscol.education.gouv.fr/sites/default/files/document/raeevaluationsoclecycle3643744pdf-76908.pdf"
+    }
+   ]
+  },
+  {
+   "key": "cycle-4",
+   "segment": "Cycle 4 — collège (5e, 4e, 3e), ages 12-15",
+   "verification_verdict": "mostly_solid",
+   "subjects": [
+    "Français",
+    "Mathématiques",
+    "Langues vivantes étrangères LV1 (anglais/allemand/espagnol/italien...)",
+    "Langues vivantes LV2 (à partir de la 5e)",
+    "Langues vivantes régionales",
+    "Langues et cultures de l'Antiquité (LCA — latin, grec — enseignement de complément)",
+    "Histoire-Géographie",
+    "Enseignement moral et civique (EMC)",
+    "Physique-chimie",
+    "Sciences de la vie et de la Terre (SVT)",
+    "Technologie",
+    "Arts plastiques",
+    "Éducation musicale",
+    "Histoire des arts (transversal)",
+    "Éducation physique et sportive (EPS)",
+    "Éducation aux médias et à l'information (EMI — transversal)",
+    "Éducation à la vie affective et relationnelle et à la sexualité (EVARS — transversal)",
+    "Éducation au développement durable (EDD — transversal)"
+   ],
+   "coverage_assessment": "The full official cycle-4 curriculum can be reconstructed. The consolidated master programme (arrêté 2015 modifié, version rentrée 2020, eduscol doc 621) enumerates per-discipline competencies and end-of-cycle attendus for EVERY subject, and is overlaid by three targeted replacements now in force or entering force: technologie (2024), EMC (2024), and français+maths (2026, progressive from 5e at rentrée 2026). Per-grade granularity for français, maths, LV and EMC comes from the attendus de fin d'année / repères annuels (BO 2019). The socle commun gives the top-level competency framework and the DNB note gives the 3e assessment frame. Together these are enough to build a structured JSON taxonomy, though extraction must track version overlays carefully (which text governs which grade in a given rentrée).",
+   "gaps": [
+    "EMI (éducation aux médias et à l'information) has no standalone in-force programme document — its competencies must be aggregated from the EMC 2024 programme, disciplinary programmes and the socle.",
+    "Per-grade attendus de fin d'année exist only for français, maths, LV and EMC. Physique-chimie, SVT, histoire-géographie, arts plastiques, éducation musicale, histoire des arts and EPS have only END-OF-CYCLE attendus in the master programme — no per-year breakdown.",
+    "Version overlay complexity: for a given rentrée, different grades follow different texts (e.g. rentrée 2026 — 5e on new français/maths 2026 + new technologie + new EMC; 4e/3e on 2020 programme for français/maths). A taxonomy must model 'applicable version by (subject, grade, rentrée)' rather than one static programme per subject.",
+    "Several canonical eduscol/education.gouv pages are behind Cloudflare and returned HTTP 403 to direct fetch; PDF direct-download links were confirmed via search but a few (EMC 2024 annexe, EVARS annexe, socle) were not captured as exact /document/{id}/download URLs and need one more resolution pass.",
+    "The new français/maths 2026 programmes (BO n°10, 5 mars 2026) are published but NOT yet applied at rentrée 2025; for a 2025-2026 snapshot they must be flagged as future-dated, while for 2026-2027 they govern 5e only."
+   ],
+   "documents": [
+    {
+     "title": "Programme d'enseignement du cycle des approfondissements (cycle 4) — version en vigueur à la rentrée 2020 (arrêté du 9 novembre 2015 modifié)",
+     "url": "https://eduscol.education.gouv.fr/4362/enseigner-au-cycle-4",
+     "pdf_url": "https://eduscol.education.fr/document/621/download",
+     "bo_reference": "BOEN n°31 du 30 juillet 2020 (arrêté du 17 juillet 2020, NOR MENE2018714A, modifiant l'arrêté du 9 novembre 2015). Consolidated on Légifrance JORFTEXT000042157717.",
+     "version_date": "En vigueur rentrée 2020; toujours applicable rentrée 2025 pour toutes les disciplines sauf technologie et EMC (remplacées) — et pour français/maths jusqu'à l'entrée en vigueur des programmes 2026",
+     "status": "in_force",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères et régionales",
+      "Langues et cultures de l'Antiquité",
+      "Histoire-Géographie",
+      "Enseignement moral et civique",
+      "Physique-chimie",
+      "Sciences de la vie et de la Terre",
+      "Technologie",
+      "Arts plastiques",
+      "Éducation musicale",
+      "Histoire des arts",
+      "Éducation physique et sportive"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "both",
+     "granularity": "Master consolidated document. Per-discipline structure: 'Compétences travaillées' (enumerable competency headings) + 'Attendus de fin de cycle' + tables of 'Connaissances et compétences associées' with 'Exemples de situations, d'activités et de ressources'. Highly enumerable per competency; languages give CECRL target levels (LV1 A2->B1, LV2 A1->A2). Good for extraction, but granularity is end-of-cycle, not per grade.",
+     "notes": "THE core cycle-4 document covering every subject. Sections for technologie and EMC are superseded by the 2024 arrêtés below; français and mathématiques sections are superseded by the 2026 arrêté (which enters force progressively from 2026). Still the in-force reference for all other subjects.",
+     "verification_note": "URL resolves but points to the GENERIC cycle 4 teaching hub, not an 'EMI au cycle 4 — cadre et ressources' page. There is a dedicated official EMI cycle 4 page. The claim's subject (EMI cadre et ressources) does not match this URL's content.",
+     "corrected_url": "https://eduscol.education.gouv.fr/4827/education-aux-medias-et-l-information-au-cycle-4"
+    },
+    {
+     "title": "Programme de technologie du cycle 4 (nouveau)",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo9/MENE2402802A",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Annexe%20%E2%80%94%20Programme%20de%20technologie%20du%20cycle%204-368016.pdf",
+     "bo_reference": "BOEN n°9 du 29 février 2024 (arrêté du 9 février 2024, NOR MENE2402802A, JO 28-2-2024). Légifrance JORFTEXT000049205283.",
+     "version_date": "Entrée en vigueur: 5e rentrée 2024-2025, 4e rentrée 2025-2026, 3e rentrée 2026-2027",
+     "status": "in_force",
+     "subjects": [
+      "Technologie"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "both",
+     "granularity": "3 thèmes + 9 compétences à acquérir sur le cycle, structurés par le triptyque Matière-Énergie-Information (MEI). Enumerable competencies with associated knowledge. Good for extraction.",
+     "notes": "Replaces the technologie section of the 2015/2020 consolidated programme. For rentrée 2025: 5e+4e on the new programme, 3e still on the 2020 version. For rentrée 2026: all three levels on the new programme."
+    },
+    {
+     "title": "Programme d'enseignement moral et civique (EMC) — cycles 2, 3 et 4 (nouveau)",
+     "url": "https://eduscol.education.gouv.fr/4752/ressources-d-accompagnement-pour-l-enseignement-moral-et-civique-au-college",
+     "pdf_url": null,
+     "bo_reference": "BOEN n°24 du 13 juin 2024 (arrêté du 29 mai 2024, NOR MENE2411959A, JO 12-6-2024)",
+     "version_date": "Entrée en vigueur progressive: 4e à la rentrée 2025-2026; 6e et 3e à la rentrée 2026-2027 (5e conserve l'ancien programme jusqu'alors)",
+     "status": "in_force",
+     "subjects": [
+      "Enseignement moral et civique"
+     ],
+     "levels": [
+      "4e",
+      "3e"
+     ],
+     "format": "both",
+     "granularity": "New framework: transmission des valeurs de la République, culture démocratique. Enumerable connaissances/compétences and objets d'enseignement per level; gives strong prominence to EMI, EDD and psychosocial skills. Good for extraction.",
+     "notes": "Replaces the EMC section of the consolidated cycle-4 programme progressively. Carries the reinforced EMI (éducation aux médias et à l'information) content. Direct PDF sits on the education.gouv BO page for the arrêté; eduscol resource hub linked.",
+     "verification_note": "The numeric ID 4752 resolves, but the canonical slug is '-aux-cycles-2-3-et-4', not '-au-college' as written (éduscol keys on the ID, so the given URL redirects fine). Also note: the page is the EMC accompaniment RESOURCES hub for the new cycles 2/3/4 programme, not the programme arrêté text itself. Topic and levels (incl. 4e, 3e) match; current.",
+     "corrected_url": "https://eduscol.education.gouv.fr/4752/ressources-d-accompagnement-pour-l-enseignement-moral-et-civique-aux-cycles-2-3-et-4"
+    },
+    {
+     "title": "Programmes de français et de mathématiques du cycle 4 (réforme 2026)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A",
+     "pdf_url": "https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A",
+     "bo_reference": "BOEN n°10 du 5 mars 2026 (arrêté du 18 février 2026, NOR MENE2602912A, JO 4-3-2026). Légifrance JORFTEXT000053613385. Annexe 1 = français (PDF ~226 Ko), Annexe 2 = mathématiques (PDF ~396 Ko).",
+     "version_date": "Entrée en vigueur: 5e à la rentrée 2026-2027, 4e à la rentrée 2027-2028, 3e à la rentrée 2028-2029",
+     "status": "entering_force_2026",
+     "subjects": [
+      "Français",
+      "Mathématiques"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "both",
+     "granularity": "New programmes organised around annual/periodic repères rather than a single 3-year block (abandons the cycle-block logic for maths). Domains maths: nombres, géométrie, données, proportionnalité + reasoning/argumentation. Enumerable per-year. Good for extraction. Two separate PDF annexes.",
+     "notes": "NOT yet in force at rentrée 2025. Applies to 5e from rentrée 2026 (September 2026, the current upcoming rentrée) — so for 2026-2027, 5e français/maths follow THIS text while 4e/3e still follow the 2020 consolidated programme. Supersedes the français+maths parts of arrêté 9 nov 2015 (Article 2)."
+    },
+    {
+     "title": "Attendus de fin d'année et repères annuels de progression — cycle 4 (français, mathématiques, langues vivantes, EMC)",
+     "url": "https://eduscol.education.fr/137/reperes-annuels-de-progression-et-attendus-de-fin-d-annee-du-cp-la-3e",
+     "pdf_url": "https://eduscol.education.fr/document/14074/download",
+     "bo_reference": "Note de service MENE1913283N, BOEN n°22 du 30 mai 2019 (attendus de fin d'année et repères annuels de progression)",
+     "version_date": "Applicables au cycle 4 pour les programmes 2020/2023; restent valables dans l'attente des nouveaux programmes",
+     "status": "in_force",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Langues vivantes étrangères",
+      "Enseignement moral et civique"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "pdf",
+     "granularity": "PER-YEAR (5e/4e/3e) 'attendus de fin d'année' in français and mathématiques with 'exemples de réussite'; per-year 'repères annuels de progression'. Languages: attendus adossés au CECRL in anglais/allemand/espagnol/italien. This is the MOST enumerable, extraction-friendly per-grade layer. Example french repères PDF given; separate PDFs per discipline/level downloadable from the table on the page.",
+     "notes": "Fills the per-grade gap left by the cycle-based master programme, but only for français, maths, LV and EMC. Other subjects (physique-chimie, SVT, histoire-géo, arts, EPS, techno) have only end-of-cycle attendus in the master programme.",
+     "verification_note": "The old host/path 301-redirects to the current canonical page on eduscol.education.gouv.fr (id 6910). Confirmed heading 'Repères annuels de progression et attendus de fin d'année du CP à la troisième'; valid rentrée 2025 (programmes 2020/2023), covers cycle 4 français, maths, langues vivantes, EMC. Recommend citing the canonical URL.",
+     "corrected_url": "https://eduscol.education.gouv.fr/6910/reperes-annuels-de-progression-et-attendus-de-fin-d-annee-du-cp-la-troisieme"
+    },
+    {
+     "title": "Socle commun de connaissances, de compétences et de culture",
+     "url": "https://eduscol.education.gouv.fr/4761/le-socle-commun-de-connaissances-de-competences-et-de-culture",
+     "pdf_url": null,
+     "bo_reference": "Décret n°2015-372 du 31 mars 2015 (NOR MENE1506516D), BOEN n°17 du 23 avril 2015, JO 2-4-2015. Légifrance LODA JORFTEXT000030426718.",
+     "version_date": "En vigueur depuis la rentrée 2016; toujours applicable",
+     "status": "in_force",
+     "subjects": [
+      "Transversal — tous enseignements"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "html",
+     "granularity": "5 domaines de formation (1: langages pour penser et communiquer, subdivisé en 4; 2: méthodes et outils pour apprendre; 3: formation de la personne et du citoyen; 4: systèmes naturels et systèmes techniques; 5: représentations du monde et activité humaine). Enumerable domains/objectives; the reference all discipline programmes map to. Prose + structured objectives.",
+     "notes": "Overarching competency framework for the whole scolarité obligatoire. Each subject programme declares its contribution to these 5 domains. Note: the DNB continuous-assessment (from session 2026) no longer scores the 8 socle components directly, but the socle remains the curricular backbone."
+    },
+    {
+     "title": "Programme d'éducation à la vie affective et relationnelle, et à la sexualité (EVARS)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo6/MENE2503064A",
+     "pdf_url": null,
+     "bo_reference": "BOEN n°6 du 6 février 2025 (arrêté du 3 février 2025, NOR MENE2503064A). Circulaire de mise en œuvre MENE2503565C du 4 février 2025. Légifrance JORFTEXT000051132259.",
+     "version_date": "Entrée en vigueur à la rentrée 2025-2026, tous niveaux (nouveau programme 5e/4e/3e)",
+     "status": "in_force",
+     "subjects": [
+      "Éducation à la vie affective et relationnelle et à la sexualité (EVARS)"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "both",
+     "granularity": "3 axes filés sur toute la scolarité (se connaître/vivre avec son corps; rencontrer l'autre/relations respectueuses; trouver sa place dans la société). Structured objectives per cycle (synthèse 4e-3e). Enumerable per axis; transversal education, not a timetabled discipline.",
+     "notes": "Transversal cross-curricular programme, not a subject with hours. New at rentrée 2025 for all collège levels."
+    },
+    {
+     "title": "Éducation aux médias et à l'information (EMI) au cycle 4 — cadre et ressources",
+     "url": "https://eduscol.education.gouv.fr/4362/enseigner-au-cycle-4",
+     "pdf_url": null,
+     "bo_reference": "Pas de programme autonome. EMI est un objet transversal, renforcé par le programme EMC 2024 (BO n°24 du 13 juin 2024) et présent dans les programmes disciplinaires + socle commun.",
+     "version_date": "En vigueur (renforcé par l'EMC 2024)",
+     "status": "in_force",
+     "subjects": [
+      "Éducation aux médias et à l'information"
+     ],
+     "levels": [
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "format": "html",
+     "granularity": "No standalone enumerable programme document. Competencies are distributed across the EMC 2024 programme, disciplinary programmes and the socle. Prose/ressources only at eduscol infothèque; extraction requires aggregating from EMC + disciplines.",
+     "notes": "Gap for a clean structured taxonomy: EMI has no dedicated in-force programme text; must be reconstructed from EMC 2024 and cross-curricular references.",
+     "verification_note": "URL resolves but points to the GENERIC cycle 4 teaching hub, not an 'EMI au cycle 4 — cadre et ressources' page. There is a dedicated official EMI cycle 4 page. The claim's subject (EMI cadre et ressources) does not match this URL's content.",
+     "corrected_url": "https://eduscol.education.gouv.fr/4827/education-aux-medias-et-l-information-au-cycle-4"
+    },
+    {
+     "title": "Modalités d'attribution du Diplôme national du brevet (DNB) — session 2026 (référentiel d'évaluation)",
+     "url": "https://eduscol.education.gouv.fr/5604/modalites-d-attribution-du-diplome-national-du-brevet",
+     "pdf_url": null,
+     "bo_reference": "Note de service MENE2515977N, BOEN du 4 septembre 2025. Arrêté du 10 avril 2025 modifiant l'arrêté du 31 décembre 2015 (Légifrance JORFTEXT000051451951).",
+     "version_date": "À compter de la session 2026",
+     "status": "in_force",
+     "subjects": [
+      "Diplôme national du brevet (évaluation — français, mathématiques, histoire-géographie-EMC, sciences)"
+     ],
+     "levels": [
+      "3e"
+     ],
+     "format": "html",
+     "granularity": "Assessment/certification frame, not a curriculum. Diploma awarded on final average >=10/20: 60% épreuves terminales (français, maths, histoire-géo-EMC, sciences, oral) + 40% moyennes annuelles de 3e (all disciplines equal weight). End of the /800-point socle-component system. Structured but describes exam mechanics, not content.",
+     "notes": "Included as the brevet reference frame for 3e. Defines which cycle-4 subjects are terminally examined and their coefficients; complements, does not replace, the discipline programmes."
+    }
+   ]
+  },
+  {
+   "key": "lycee-seconde",
+   "segment": "Seconde générale et technologique (lycée GT, age 15-16) — tronc commun + enseignements optionnels",
+   "verification_verdict": "solid",
+   "subjects": [
+    "Français",
+    "Histoire-géographie",
+    "Langues vivantes A et B (étrangères et régionales)",
+    "Sciences économiques et sociales (SES)",
+    "Mathématiques",
+    "Physique-chimie",
+    "Sciences de la vie et de la Terre (SVT)",
+    "Éducation physique et sportive (EPS)",
+    "Enseignement moral et civique (EMC)",
+    "Sciences numériques et technologie (SNT)",
+    "Optionnels artistiques (arts plastiques, éducation musicale, théâtre, danse, cinéma-audiovisuel, histoire des arts, arts du cirque)",
+    "Optionnels littéraires (Langues et cultures de l'Antiquité : latin / grec ; LVC)",
+    "Optionnels scientifiques et technologiques (sciences de l'ingénieur, création et innovation technologiques, sciences et laboratoire, biotechnologies, santé et social, management et gestion, écologie-agronomie-territoires-développement durable)"
+   ],
+   "coverage_assessment": "Yes, the full official curriculum for Seconde GT tronc commun is reconstructible from these documents: every common subject has a canonical éduscol pivot page plus a downloadable in-force PDF and a Bulletin officiel reference. The core scientific/technical subjects (maths, physique-chimie, SVT, SES, SNT) contain highly enumerable 'Contenus / Capacités attendues' tables ideal for atomic extraction; français, histoire-géographie, EMC and languages are more thematic/prose with listed objets d'étude and CECRL descriptors. Three post-2019 reforms are captured with their exact effective dates: EMC (new BO 13 June 2024, already in force in seconde), langues vivantes étrangères (new BO 29 May 2025, in force in seconde since rentrée 2025), and mathematics (new BO 2 April 2026, in force in seconde from rentrée 2026-2027) — so both the 2025-in-force and 2026-incoming versions are documented.",
+   "gaps": [
+    "education.gouv.fr BO pages (e.g. the 2 April 2026 maths arrêté MENE2602914A) return HTTP 403 to automated fetchers; URLs are canonical and verified via éduscol but direct machine crawl needs a browser/User-Agent workaround or the éduscol-hosted PDF mirror.",
+    "Exact stable direct-PDF URLs for français, maths (2019), SES, SNT, EPS, EMC, arts and the new 2025/2026 programmes were not all captured as literal href strings — they are served via éduscol 'document/download' links whose numeric IDs need one extra fetch per file to resolve (physique-chimie, SVT, histoire-géo, CIT/SI PDFs ARE captured as literal URLs).",
+    "The 'socle commun de connaissances, de compétences et de culture' is a collège-level framework (mastery assessed end of cycle 4); it is NOT a lycée/seconde document — for this segment it only appears as a reference the seconde is meant to consolidate, so no seconde-specific socle document exists.",
+    "'Attendus de fin d'année' and 'repères annuels de progression' are primary/collège (cycles 1-4) instruments and do NOT exist for the lycée; at seconde the equivalent granularity is the 'capacités attendues/exigibles' embedded in each subject programme (already captured).",
+    "Not every one of the ~15+ optional enseignements was enumerated with its own row (each artistic discipline and each technological optional has a separate éduscol pivot page + 2019 arrêté); arts plastiques, LCA and CIT/SI are given as representative exemplars with a note that siblings follow the same BO spécial n°1 du 22 janvier 2019.",
+    "Seconde spécifique STHR (sciences et technologies de l'hôtellerie et restauration) has its own distinct programmes (e.g. maths STHR, BO 2019) and is only partially noted here since the task targets seconde GT tronc commun."
+   ],
+   "documents": [
+    {
+     "title": "Programmes et ressources en français - voie GT (page pivot éduscol, seconde GT)",
+     "url": "https://eduscol.education.gouv.fr/5793/programmes-et-ressources-en-francais-voie-gt",
+     "subjects": [
+      "Français"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Prose + objets d'étude énumérables (perfectionnement de l'expression écrite/orale, étude de la langue avec liste de notions de grammaire); pas de codes de compétences ni d'attendus chiffrés",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019, modifié en 2020",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF ~275 Ko listé 'Seconde générale et technologique' sur la page)",
+     "version_date": "Rentrée 2019 (modif. 2020), en vigueur rentrée 2025 et 2026",
+     "notes": "Arrêté du 17 janvier 2019, NOR MENE1901577A. S'y ajoute un 'programme national d'œuvres' annuel pour la première (pas pour la seconde). Aucun nouveau programme de français seconde en 2026."
+    },
+    {
+     "title": "Programme d'enseignement de mathématiques de la classe de seconde GT (2019, EN VIGUEUR rentrée 2025)",
+     "url": "https://eduscol.education.gouv.fr/5817/programmes-et-ressources-en-mathematiques-voie-gt",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Fortement énumérable: tableaux 'Contenus / Capacités attendues' par thème (Nombres et calculs, Géométrie, Fonctions, Statistiques et probabilités, Algorithmique et programmation) + liste d'automatismes",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté 17 janvier 2019, NOR MENE1901631A/MENE1901632A)",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF 400.72 Ko 'Seconde générale et technologique' sur la page)",
+     "version_date": "En vigueur pour la rentrée 2025-2026",
+     "notes": "Arrêté aussi sur Légifrance: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038029492/ . Reste le programme applicable jusqu'à fin 2025-2026."
+    },
+    {
+     "title": "NOUVEAU programme de mathématiques de seconde GT (réforme 2026) — entre en vigueur rentrée 2026-2027",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2602914A",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "entering_force_2026",
+     "format": "both",
+     "granularity": "Énumérable (tableaux contenus/capacités), remplace le programme 2019",
+     "bo_reference": "BO n°14 du 2 avril 2026 (arrêté, NOR MENE2602914A)",
+     "pdf_url": "PDF téléchargeable depuis la page pivot éduscol 5817 (rubrique 'Publication des nouveaux programmes de lycée')",
+     "version_date": "Application: seconde et première à la rentrée 2026-2027; terminale rentrée 2027-2028",
+     "notes": "Fait partie d'un paquet de 7 nouveaux programmes de maths lycée publiés au BO du 2 avril 2026. Page education.gouv.fr renvoie 403 aux fetchers automatiques mais l'URL est canonique. À intégrer en parallèle du programme 2019 (double version 2025 vs 2026)."
+    },
+    {
+     "title": "Programme de physique-chimie de la classe de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5829/programmes-et-ressources-en-physique-chimie-voie-gt",
+     "subjects": [
+      "Physique-chimie"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Très énumérable: 3 thèmes (Constitution et transformations de la matière, Mouvement et interactions, Ondes et signaux) avec tableaux 'Notions et contenus / Capacités exigibles' + capacités mathématiques et numériques (Python)",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe634annexe1062989pdf-82263.pdf",
+     "version_date": "En vigueur rentrée 2025 et 2026",
+     "notes": "Pas de refonte 2026 annoncée pour la physique-chimie seconde (contrairement aux maths)."
+    },
+    {
+     "title": "Programme de sciences de la vie et de la Terre (SVT) de la classe de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5835/programmes-et-ressources-en-sciences-de-la-vie-et-de-la-terre-voie-gt",
+     "subjects": [
+      "Sciences de la vie et de la Terre (SVT)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Énumérable: 3 thématiques (La Terre, la vie et l'organisation du vivant; Enjeux contemporains de la planète; Le corps humain et la santé), chaque thème listant 'Connaissances' et 'Objectifs / capacités'",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe647annexe1063008pdf-82875.pdf",
+     "version_date": "En vigueur rentrée 2025 et 2026 (1h30 tronc commun)",
+     "notes": null
+    },
+    {
+     "title": "Programme d'histoire-géographie de la classe de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5799/programmes-et-ressources-en-histoire-geographie-voie-gt",
+     "subjects": [
+      "Histoire-géographie"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Semi-énumérable: Histoire 'Grandes étapes de la formation du monde moderne' (4 thèmes/48h) + Géographie 'Environnement, développement, mobilité' (4 thèmes/48h), chacun décliné en questions + tableau de 'Capacités et méthodes'. Contenus détaillés en prose, pas de codes de compétences.",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Programme%20d%26%23039%3Bhistoire-g%C3%A9ographie%20de%20seconde%20g%C3%A9n%C3%A9rale%20et%20technologique-253353.pdf",
+     "version_date": "En vigueur rentrée 2025 et 2026",
+     "notes": "Adaptations spécifiques dans les territoires d'outre-mer."
+    },
+    {
+     "title": "Programmes de langues vivantes étrangères — enseignement commun (LVA/LVB) de seconde GT — NOUVEAU 2025, EN VIGUEUR",
+     "url": "https://eduscol.education.gouv.fr/5811/programmes-et-ressources-en-langues-vivantes-voie-gt",
+     "subjects": [
+      "Langues vivantes A et B (étrangères et régionales)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Adossé au CECRL: niveaux visés (B1/B2) par activité langagière (compréhension orale/écrite, expression orale/écrite, interaction) + axes culturels; descripteurs de compétences énumérables mais pas de codes atomiques",
+     "bo_reference": "BO n°22 du 29 mai 2025 (langues vivantes étrangères)",
+     "pdf_url": "PDF téléchargeable sur la page pivot 5811 (nouveaux programmes LVE)",
+     "version_date": "En application en seconde GT dès la rentrée 2025-2026 (première/terminale à la rentrée 2026-2027)",
+     "notes": "CHANGEMENT 2025 majeur: nouveau programme LVE remplaçant le 2019 en seconde. Pour la seconde, ce nouveau programme est déjà en vigueur à la rentrée 2025."
+    },
+    {
+     "title": "Programmes de langues vivantes régionales — seconde GT (2019 puis réforme 2026)",
+     "url": "https://eduscol.education.gouv.fr/5811/programmes-et-ressources-en-langues-vivantes-voie-gt",
+     "subjects": [
+      "Langues vivantes A et B (étrangères et régionales)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Adossé au CECRL (mêmes descripteurs que LVE); prose + niveaux par activité langagière",
+     "bo_reference": "Rentrée 2025: BO spécial n°1 du 22 janvier 2019 (inchangé). Rentrée 2026-2027: nouveau BO n°21 du 21 mai 2026",
+     "pdf_url": null,
+     "version_date": "LV régionales seconde: programme 2019 en vigueur pour 2025-2026; nouveau programme (BO 21 mai 2026) applicable seconde à la rentrée 2026-2027",
+     "notes": "Distinction importante: en 2025, LVE seconde = nouveau prog 2025, mais LV régionales seconde = encore 2019. En 2026, les deux basculent sur les nouveaux programmes."
+    },
+    {
+     "title": "Programme de sciences économiques et sociales (SES) — enseignement commun de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5838/programmes-et-ressources-en-sciences-economiques-et-sociales-voie-gt",
+     "subjects": [
+      "Sciences économiques et sociales (SES)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Énumérable: questionnements par sous-discipline (Science économique, Sociologie et science politique, Regards croisés) avec liste d''objectifs d'apprentissage' explicites par chapitre",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF 166.29 Ko 'Enseignement commun de SES de seconde' sur la page)",
+     "version_date": "En vigueur rentrée 2025 et 2026",
+     "notes": null
+    },
+    {
+     "title": "Programme de sciences numériques et technologie (SNT) de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5841/programmes-et-ressources-en-sciences-numeriques-et-technologie-voie-gt",
+     "subjects": [
+      "Sciences numériques et technologie (SNT)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Très énumérable: 7 thématiques (Internet, Le Web, Réseaux sociaux, Données structurées, Localisation/cartographie/mobilité, Informatique embarquée/objets connectés, Photographie numérique) avec 'Contenus / Capacités attendues' + repères historiques",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF 311.81 Ko 'Programme SNT' sur la page)",
+     "version_date": "En vigueur rentrée 2025 et 2026 (SNT propre à la seconde uniquement)",
+     "notes": "SNT n'existe qu'en seconde (1h30). Vademecum SNT/NSI associé."
+    },
+    {
+     "title": "Programme d'éducation physique et sportive (EPS) — enseignement commun lycée GT (dont seconde)",
+     "url": "https://eduscol.education.gouv.fr/5784/programmes-et-ressources-en-education-physique-et-sportive-eps-voie-gt",
+     "subjects": [
+      "Éducation physique et sportive (EPS)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Énumérable par compétences: 5 champs d'apprentissage (CA1-CA5) + Attendus de Fin de Lycée (AFL); prose méthodologique autour",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (enseignement commun). Enseignement optionnel EPS: BO n°25 du 24 juin 2021",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF 286.11 Ko 'Enseignement commun d'EPS' sur la page)",
+     "version_date": "En vigueur rentrée 2025 et 2026 (2h tronc commun)",
+     "notes": "Programme commun couvrant seconde+cycle terminal (non spécifique seconde). L'enseignement optionnel EPS (3h) relève du BO n°25 du 24 juin 2021."
+    },
+    {
+     "title": "NOUVEAU programme d'enseignement moral et civique (EMC) de seconde GT — réforme 2024, EN VIGUEUR",
+     "url": "https://eduscol.education.gouv.fr/5787/programmes-et-ressources-en-enseignement-moral-et-civique-voie-gt",
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Structuré par thème annuel (seconde: 'Droits, libertés et responsabilité') + finalités/compétences; prose avec objets d'enseignement listés, pas de codes atomiques",
+     "bo_reference": "BO n°24 du 13 juin 2024",
+     "pdf_url": "PDF téléchargeable sur la page pivot 5787 ('Seconde générale et technologique, BO n°24 du 13 juin 2024')",
+     "version_date": "En application en seconde GT et première depuis la rentrée 2024/2025; terminale à la rentrée 2026-2027",
+     "notes": "CHANGEMENT 2024: le nouveau programme EMC remplace le programme EMC 2019 (BO spécial n°1 2019). Déjà en vigueur en seconde. Livret d'accompagnement seconde 'Droits, libertés et responsabilité' + annexe documentaire disponibles."
+    },
+    {
+     "title": "Programme d'enseignement optionnel d'arts (arts plastiques) de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5772/programmes-et-ressources-en-arts-plastiques-voie-gt",
+     "subjects": [
+      "Optionnels artistiques (arts plastiques, éducation musicale, théâtre, danse, cinéma-audiovisuel, histoire des arts, arts du cirque)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Prose + questionnements et compétences travaillées; peu de codes atomiques",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.gouv.fr/document/download (PDF 493.85 Ko 'Option arts en seconde' sur la page)",
+     "version_date": "En vigueur rentrée 2025 et 2026 (3h)",
+     "notes": "Les 7 enseignements artistiques (arts plastiques, éducation musicale, théâtre, danse, cinéma-audiovisuel, histoire des arts, arts du cirque) ont chacun leur page pivot éduscol et leur arrêté 2019. Arts plastiques donné ici comme exemplaire; les autres suivent le même BO 2019."
+    },
+    {
+     "title": "Programme d'enseignement optionnel de langues et cultures de l'Antiquité (LCA : latin / grec) de seconde GT",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901579A.htm",
+     "subjects": [
+      "Optionnels littéraires (Langues et cultures de l'Antiquité : latin / grec ; LVC)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Prose + objets d'étude et compétences (langue, culture); tableaux d'objets d'étude par niveau",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté, NOR MENE1901579A)",
+     "pdf_url": null,
+     "version_date": "En vigueur rentrée 2025 et 2026 (latin et grec, 3h)",
+     "notes": "Page pivot éduscol LCA existe également; la LVC (langue vivante C, optionnel) relève des programmes LV (voir docs langues vivantes)."
+    },
+    {
+     "title": "Programme d'enseignements optionnels technologiques : création et innovation technologiques (CIT) et sciences de l'ingénieur (SI) de seconde GT",
+     "url": "https://eduscol.education.gouv.fr/5832/programmes-et-ressources-en-sciences-de-l-ingenieur-voie-gt",
+     "subjects": [
+      "Optionnels scientifiques et technologiques (sciences de l'ingénieur, création et innovation technologiques, sciences et laboratoire, biotechnologies, santé et social, management et gestion, écologie-agronomie-territoires-développement durable)"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Énumérable: compétences travaillées + thématiques/champs technologiques; démarche par projets/défis",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019",
+     "pdf_url": "https://eduscol.education.fr/document/24913/download",
+     "version_date": "En vigueur rentrée 2025 et 2026 (1h30 chacun)",
+     "notes": "Autres optionnels techno de seconde avec pages/PDF distincts et même BO 2019: sciences et laboratoire (SL), biotechnologies, santé et social, management et gestion, écologie-agronomie-territoires-développement durable (EATDD, lycées agricoles). Chacun a sa page pivot éduscol dédiée."
+    }
+   ]
+  },
+  {
+   "key": "lycee-tronc-commun-1re-tle",
+   "segment": "PREMIÈRE + TERMINALE voie générale — TRONC COMMUN (enseignements communs, ages 16-18)",
+   "verification_verdict": "mostly_solid",
+   "subjects": [
+    "Français (Première)",
+    "Philosophie (Terminale)",
+    "Histoire-géographie (Première + Terminale)",
+    "Langues vivantes A et B (LVA/LVB)",
+    "Enseignement scientifique (Première + Terminale)",
+    "Mathématiques (enseignement de mathématiques spécifique 1h30, intégré à l'enseignement scientifique en Première)",
+    "Éducation physique et sportive (EPS)",
+    "Enseignement moral et civique (EMC)"
+   ],
+   "coverage_assessment": "Yes — the full official tronc-commun curriculum for Première + Terminale voie générale can be reconstructed from these documents. Every subject is covered by a canonical Bulletin officiel arrêté whose HTML page (education.gouv.fr/bo/...) and Légifrance twin contain the complete enumerable content (objets d'étude, notions, thèmes/chapitres, savoirs/savoir-faire, capacités attendues, champs d'apprentissage, CECRL descriptors). The reform state for rentrée 2025 is clean: the 2019 programmes (with 2022-2023 maths updates) remain in force in 1re/Tle, with confirmed successors only for LV (rentrée 2026) and EMC (already in Première, Terminale in 2026).",
+   "gaps": [
+    "eduscol.education.gouv.fr HTML and cache.media PDF programme pages return HTTP 403 to automated fetch; direct éduscol PDF download URLs were not captured. The full text is nonetheless available on the education.gouv.fr/bo/*.htm canonical pages and on Légifrance, and académie mirrors (ac-* sites) host identical PDFs.",
+    "2026 successor programmes for Première/Terminale voie générale are only CONFIRMED for langues vivantes (arrêté 5 mai 2025) and EMC (arrêté 29 mai 2024). The government notice states new programmes enter 1re/Tle at rentrée 2026 — whether français (1re), philosophie, histoire-géographie, enseignement scientifique, EPS and maths also get 2026 revisions was not confirmed in this pass; check for arrêtés published late 2025 / 2026.",
+    "The 'new français/maths programmes announced 2024-2025' cited in the brief concern cycles 1-2 (primary/collège), NOT this lycée segment; no impact on 1re/Tle tronc commun for rentrée 2025.",
+    "Terminale mathématiques 'complémentaires' and 'expertes' are OPTIONS (enseignements optionnels), not tronc commun, so excluded per scope — but flagged: the only tronc-commun maths is the Première 1h30 integrated programme (MENE2218178A). Terminale common curriculum contains no mathematics.",
+    "The exact NOR reference of the 2019 lycée EMC arrêté (still in force in Terminale until rentrée 2026) was not pinned; it is within BO spécial n°1 du 22 janvier 2019.",
+    "Distinct bac EXAM programme documents (définitions d'épreuves + programmes limitatifs) exist per subject and are separate from teaching programmes; only the français national œuvres programme was captured here. HG, enseignement scientifique, LV etc. each have separate épreuve definitions worth a dedicated pass.",
+    "Français Première has both the standing teaching programme (MENE1901575A) and a yearly-renewed programme national d'œuvres (note de service); the precise 2025-2026 (session 2026) note-de-service reference is distinct from the 2026-2027 one (MENE2518792N) and should be pulled separately for the exact session-2026 works list."
+   ],
+   "documents": [
+    {
+     "title": "Programme de français — classe de seconde GT et classe de première des voies générale et technologique",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901575A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Français"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Semi-structured: 4 objets d'étude (le roman/récit XVIIIe-XXIe; la poésie XIXe-XXIe; la littérature d'idées XVIe-XVIIIe; le théâtre XVIIe-XXIe) each with perspectives d'étude and attendus; study of langue (grammaire) enumerable. Prose framing + enumerable objets/notions.",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté du 17-1-2019, NOR MENE1901575A)",
+     "version_date": "rentrée 2019 (Première); in force for rentrée 2025",
+     "notes": "Enseignement commun de français en Première (l'épreuve anticipée de français EAF a lieu en fin de Première). Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038029424 . NEW programme announced to enter force in Première at rentrée 2026 — not yet captured/confirmed here."
+    },
+    {
+     "title": "Programme national d'œuvres pour l'enseignement de français en Première (programme limitatif pour l'épreuve anticipée du baccalauréat — session 2026 / année scolaire 2025-2026)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo30/MENE2518792N",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/baccalaureat-general-2026-francais-epreuve-anticipee-516893.pdf",
+     "subjects": [
+      "Français"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "format": "both",
+     "granularity": "Fully enumerable: explicit limitative list of works per objet d'étude with associated parcours (e.g. La Boétie, Discours de la servitude volontaire; Fontenelle, Entretiens sur la pluralité des mondes; Graffigny, Lettres d'une Péruvienne; Corneille, Le Menteur; Musset, On ne badine pas avec l'amour).",
+     "bo_reference": "Note de service — programme national d'œuvres (renewed each year). Ref MENE2518792N covers année 2026-2027; the 2025-2026 (session 2026) list is published in a parallel note de service.",
+     "version_date": "session 2026 (année scolaire 2025-2026); renewed annually",
+     "notes": "This is a bac EXAM programme document, distinct from the teaching programme (MENE1901575A). Only the objet d'étude 'Littérature d'idées XVIe-XVIIIe' is renewed each cycle; the other objets keep their standing lists. Bac-général session-2026 PDF is the épreuve anticipée définition + œuvres.",
+     "verification_note": "URL resolves and is a valid, current programme national d'oeuvres for the français épreuve anticipée, BUT the claimed year/session is wrong. The document's official title is 'Programme national d'oeuvres pour l'enseignement de français pour l'année scolaire 2026-2027' (BO n°30 du 24 juillet 2025) — i.e. the works for Première in 2026-2027 (épreuve June 2027), NOT 'session 2026 / année scolaire 2025-2026' as claimed. The claim conflates it with the separate, now-past session-2026 PDF (baccalaureat-general-2026-francais-epreuve-anticipee-516893.pdf), which is a different document for a different year. As of July 2026 this 2026-2027 note IS the current forward-looking programme, so the URL is fine but the label should read 'année scolaire 2026-2027 (session 2027)'."
+    },
+    {
+     "title": "Programme de philosophie — classe terminale des voies générale et technologique",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921238A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Philosophie"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable for the voie générale: fixed list of 17 notions (e.g. l'art, le bonheur, la conscience, le devoir, l'État, la justice, le langage, la liberté, la nature, la raison, la technique, le temps, la vérité...); list of repères conceptuels; open list of auteurs (authors) organized by period. Plus prose on method.",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 (arrêté du 19-7-2019, NOR MENE1921238A)",
+     "version_date": "rentrée 2020; in force for rentrée 2025",
+     "notes": "Voie générale studies the full notions list; voie technologique a reduced list. Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038799903 . NEW philosophie programme announced for rentrée 2026 in Terminale — not yet confirmed here."
+    },
+    {
+     "title": "Programme d'histoire-géographie — classe de seconde GT et classe de première (voies générale et technologique)",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901577A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Histoire-géographie"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable: history and geography each split into thèmes → chapitres, with 'points de passage et d'ouverture', démarches/contenus, and capacités/méthodes lists. Première history theme: 'Nations, empires, nationalités (1789-années 1920)'; geography: 'Les dynamiques d'un monde en recomposition'.",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté du 17-1-2019, NOR MENE1901577A)",
+     "version_date": "rentrée 2019 (Première); in force for rentrée 2025",
+     "notes": "Enseignement commun HG (distinct from spécialité HGGSP). éduscol resource page: https://eduscol.education.gouv.fr/5799/programmes-et-ressources-en-histoire-geographie-voie-gt"
+    },
+    {
+     "title": "Programme d'histoire-géographie — classe terminale des voies générale et technologique",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921243A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Histoire-géographie"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable: thèmes → chapitres with points de passage, contenus and capacités. Terminale history: 'Relations entre les puissances et opposition des modèles politiques (des années 1930 à nos jours)'; geography: 'Les dynamiques de la mondialisation / des grandes aires continentales'.",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 (arrêté du 19-7-2019, NOR de l'arrêté MENE1921242A; page MENE1921243A)",
+     "version_date": "rentrée 2020; in force for rentrée 2025",
+     "notes": "Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038799918"
+    },
+    {
+     "title": "Programme d'enseignement commun et optionnel de langues vivantes — seconde GT et classes de première et terminale (voies générale et technologique) [2019, en vigueur 2025]",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901585A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Langues vivantes (LVA/LVB)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Enumerable: CECRL-aligned (targets B1→B2/C1 by end of cycle terminal), 8 axes culturels ('Identités et échanges', 'Espace privé et espace public', 'Art et pouvoir', 'Citoyenneté et mondes virtuels', 'Fictions et réalités', 'Innovations scientifiques et responsabilité', 'Diversité et inclusion', 'Territoire et mémoire') + activités langagières descriptors per level.",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté du 17-1-2019, NOR MENE1901585A)",
+     "version_date": "rentrée 2019 (Première) / 2020 (Terminale); still in force for rentrée 2025 in 1re + Tle",
+     "notes": "Single programme covers LVA, LVB and LV optionnelle for the cycle terminal. Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038029454 . SUPERSEDED by the 2025 arrêté below for rentrée 2026."
+    },
+    {
+     "title": "Programmes d'enseignement communs et optionnels de langues vivantes ÉTRANGÈRES — collège et lycée GT [nouveau 2025, entrée en vigueur 1re/Tle rentrée 2026]",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo22/MENE2504621A",
+     "pdf_url": null,
+     "subjects": [
+      "Langues vivantes étrangères (LVA/LVB)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "entering_force_2026",
+     "format": "html",
+     "granularity": "Enumerable, CECRL-based competency descriptors + thematic axes (structure comparable to 2019).",
+     "bo_reference": "BO n°22 de 2025 (arrêté du 5 mai 2025, NOR MENE2504621A)",
+     "version_date": "entrée en vigueur en première et terminale à la rentrée 2026-2027",
+     "notes": "Article 4: en vigueur en 1re/Tle GT à la rentrée 2026-2027. Article 3 abroge l'arrêté du 17 janvier 2019 pour les LV étrangères. Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051666594 . A parallel arrêté fixes the LV RÉGIONALES programmes (BO 2026 Hebdo21, NOR MENE2602909A): https://www.education.gouv.fr/bo/2026/Hebdo21/MENE2602909A"
+    },
+    {
+     "title": "Programme d'enseignement scientifique — classe de première de la voie générale (avec composante mathématiques ajoutée en 2023)",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901573A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement scientifique"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable: thèmes ('Une longue histoire de la matière', 'Le Soleil, notre source d'énergie', 'La Terre, un astre singulier', 'Son et musique...') each broken into 'Savoirs' and 'Savoir-faire' bullet lists; explicit 'Histoire, enjeux, débats'.",
+     "bo_reference": "Base: BO spécial n°1 du 22 janvier 2019 (arrêté du 17-1-2019, NOR MENE1901573A). Modifié par arrêté du 30 mai 2023, BO n°25 du 22 juin 2023 (NOR MENE2312806A): https://www.education.gouv.fr/bo/2023/Hebdo25/MENE2312806A",
+     "version_date": "en vigueur rentrée 2019; version modifiée (recentrée pour intégrer les maths) en vigueur rentrée 2023; in force rentrée 2025",
+     "notes": "Modif Légifrance (arrêté 30-5-2023): https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047692668 (terminale) — première modif is MENE2312806A."
+    },
+    {
+     "title": "Programme d'enseignement scientifique — classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921241A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement scientifique"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable: thèmes ('Science, climat et société', 'Le futur des énergies', 'Une histoire du vivant', 'Cerveau et mouvement volontaire') with 'Savoirs' / 'Savoir-faire' bullet lists.",
+     "bo_reference": "Base: BO spécial n°8 du 25 juillet 2019 (arrêté du 19-7-2019, NOR MENE1921241A). Modifié par arrêté du 30 mai 2023, BO n°25 du 22 juin 2023 (NOR MENE2312807A): https://www.education.gouv.fr/bo/2023/Hebdo25/MENE2312807A",
+     "version_date": "en vigueur rentrée 2020; version modifiée en vigueur rentrée 2024; in force rentrée 2025",
+     "notes": "Légifrance base: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038799908/ ; modif Légifrance: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047692668"
+    },
+    {
+     "title": "Programme de mathématiques intégré à l'enseignement scientifique en classe de première générale (enseignement de mathématiques spécifique 1h30)",
+     "url": "https://www.education.gouv.fr/bo/22/Hebdo27/MENE2218178A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Highly enumerable: 4 domaines ('Information chiffrée, statistique descriptive'; 'Phénomènes aléatoires — probabilités conditionnelles'; 'Phénomènes d'évolution — suites, fonctions, exponentielle, dérivation'; 'Automatismes') with 'Contenus' and 'Capacités attendues' bullet lists.",
+     "bo_reference": "BO n°27 du 7 juillet 2022 (arrêté du 6 juillet 2022, NOR MENE2218178A)",
+     "version_date": "en vigueur rentrée 2022; in force rentrée 2025",
+     "notes": "This is the tronc-commun maths for Première students who did NOT choose the spécialité mathématiques (1h30/sem, in addition to the 2h enseignement scientifique). Organizational arrêté du 3 janvier 2023 (place des maths, évaluation au bac, 40% de la note d'enseignement scientifique): https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047005229 . Légifrance programme: https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046024635 . NOTE: in Terminale the common curriculum has NO maths; 'mathématiques complémentaires' and 'mathématiques expertes' are OPTIONS (hors tronc commun) — see gaps."
+    },
+    {
+     "title": "Programme d'enseignement commun et optionnel d'éducation physique et sportive (EPS) — seconde GT et classes de première et terminale (voies générale et technologique)",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901574A.htm",
+     "pdf_url": null,
+     "subjects": [
+      "Éducation physique et sportive (EPS)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Enumerable: 5 champs d'apprentissage (CA1 réaliser une performance mesurée; CA2 s'adapter à des environnements variés; CA3 s'exprimer devant autrui; CA4 conduire un affrontement interindividuel/collectif; CA5 entretien de soi), with attendus de fin de lycée (AFL) per champ. Prose on évaluation. Activities (APSA) enumerated.",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 (arrêté du 17-1-2019, NOR MENE1901574A)",
+     "version_date": "rentrée 2019 (2de/1re) et 2020 (Tle); in force rentrée 2025",
+     "notes": "Single programme spanning seconde→terminale. éduscol: https://eduscol.education.gouv.fr/5784/programmes-et-ressources-en-education-physique-et-sportive-eps-voie-gt"
+    },
+    {
+     "title": "Programme d'enseignement moral et civique (EMC) — écoles, collège, lycées GT et professionnel [nouveau programme 2024]",
+     "url": "https://www.education.gouv.fr/bo/2024/Hebdo24/MENE2413934A",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Enumerable: structured by finalités/culture (engagement, sensibilité, règle et droit, jugement) with connaissances, compétences and objets d'enseignement per niveau; strengthened EMI, EDD, compétences psychosociales.",
+     "bo_reference": "BO n°24 du 13 juin 2024 (arrêté du 29 mai 2024, NOR MENE2413934A)",
+     "version_date": "Mise en œuvre progressive au lycée GT: 2de rentrée 2024, PREMIÈRE rentrée 2025, TERMINALE rentrée 2026",
+     "notes": "For this segment in 2025-2026: the NEW 2024 EMC programme is IN FORCE in Première (rentrée 2025) but only enters Terminale at rentrée 2026. ~18h annuelles. éduscol: https://eduscol.education.gouv.fr/5787/programmes-et-ressources-en-enseignement-moral-et-civique-voie-gt"
+    },
+    {
+     "title": "Programme d'enseignement moral et civique (EMC) au lycée GT [programme 2019, encore en vigueur en Terminale jusqu'à rentrée 2026]",
+     "url": "https://eduscol.education.gouv.fr/5787/programmes-et-ressources-en-enseignement-moral-et-civique-voie-gt",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "superseded",
+     "format": "html",
+     "granularity": "Enumerable: axes/questionnements annuels with notions and capacités, but thinner than the 2024 version.",
+     "bo_reference": "Programme EMC lycée 2019 (arrêté du 17-1-2019, publié BO spécial n°1 du 22 janvier 2019). Exact NOR to be confirmed.",
+     "version_date": "rentrée 2019; remains in force for TERMINALE only until it is replaced by the 2024 programme at rentrée 2026",
+     "notes": "Transition subject: for rentrée 2025-2026, Terminale still runs the 2019 EMC programme while Première already runs the 2024 one. NOR of the 2019 lycée EMC arrêté not pinned in this pass — verify on éduscol/Légifrance."
+    }
+   ]
+  },
+  {
+   "key": "lycee-specialites",
+   "segment": "Enseignements de spécialité, voie générale, cycle terminal (Première et Terminale) — les 13 spécialités",
+   "verification_verdict": "mostly_solid",
+   "subjects": [
+    "Mathématiques",
+    "Physique-chimie",
+    "Sciences de la vie et de la Terre (SVT)",
+    "Numérique et sciences informatiques (NSI)",
+    "Sciences économiques et sociales (SES)",
+    "Histoire-géographie, géopolitique et sciences politiques (HGGSP)",
+    "Humanités, littérature et philosophie (HLP)",
+    "Langues, littératures et cultures étrangères et régionales (LLCER)",
+    "Littérature, langues et cultures de l'Antiquité (LCA)",
+    "Arts (arts plastiques, cinéma-audiovisuel, danse, histoire des arts, musique, théâtre, arts du cirque)",
+    "Biologie-écologie (lycée agricole)",
+    "Sciences de l'ingénieur (SI)",
+    "Éducation physique, pratiques et culture sportives (EPPCS)"
+   ],
+   "coverage_assessment": "Full official curriculum for all 13 spécialités can be reconstructed for both Première and Terminale: every programme is fixed by a dated arrêté with a canonical BO/Légifrance HTML page and, for most, an éduscol annexe PDF. The core scientific spécialités (maths, PC, SVT, NSI, SI, biologie-écologie) enumerate notions/capacités in extractable table form; the literary/social ones (HGGSP, HLP, LLCER, LCA, SES, arts) are organised into enumerable thèmes/axes/objets d'étude but the content within is prose. All listed programmes are in force for rentrée 2025 and rentrée 2026; the only scheduled change is a new maths-terminale programme (arrêté 26-2-2026) that only applies from rentrée 2027-2028, so it does NOT affect 2025/2026.",
+   "gaps": [
+    "Aucune spécialité du lycée ne dispose de documents séparés 'attendus de fin d'année' ni 'repères annuels de progression' — ces formats n'existent qu'aux cycles 2-3-4 (école/collège). Au lycée, les capacités/attendus sont intégrés dans le programme lui-même.",
+    "Les spécialités littéraires/artistiques (LLCER, LCA, arts) s'appuient sur des 'programmes limitatifs' d'œuvres publiés chaque année par note de service (ex. MENE2404047N pour LCA 2024-2026, arrêté 7-4-2025 pour histoire des arts). Ces listes annuelles ne sont pas incluses ici de façon exhaustive et devraient être collectées par année pour une réplication complète.",
+    "Le programme d'arts (MENE1901567A) est un arrêté unique regroupant 7 annexes disciplinaires (arts plastiques, cinéma-audiovisuel, danse, histoire des arts, musique, théâtre, arts du cirque); pour une extraction fine il faudra séparer chaque annexe.",
+    "Les URLs PDF directes n'ont été confirmées que pour une partie des spécialités (SVT première, HGGSP terminale, HLP première, SI première, biologie-écologie). Pour les autres, seule la page HTML BO est disponible; les PDF éduscol existent mais leurs URLs exactes restent à récupérer sur chaque page 'Programmes et ressources ... voie GT/G' d'éduscol.",
+    "Le nouveau programme de maths terminale (arrêté 26-2-2026, MENE2602919A) applicable rentrée 2027-2028 signale une réforme en cours: vérifier si des arrêtés analogues remplaçant d'autres spécialités en 2026 seront publiés pour la rentrée 2027, mais aucun n'affecte les rentrées 2025/2026.",
+    "Biologie-écologie relève d'un double pilotage Éducation nationale + Agriculture (publication BO-Agri); la page éduscol/education.gouv.fr n'héberge pas le référentiel, qui vit sur chlorofil.fr."
+   ],
+   "documents": [
+    {
+     "title": "Programme d'enseignement de spécialité de mathématiques de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901632A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901632A)",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: contenus par domaine (Algèbre, Analyse, Géométrie, Probabilités, Algorithmique) avec listes de 'Contenus' et 'Capacités attendues' + 'démonstrations'",
+     "notes": "Légifrance: JORFTEXT000038029497 (eli/arrete/2019/1/17/MENE1901632A).",
+     "verification_note": "URL is live (blocks automated fetch via Datadome; confirmed via search index with exact matching title). But SUPERSEDED: arrêté du 26 février 2026 (MENE2602917A) replaces the annex of the 17 January 2019 arrêté, entering into application at rentrée 2026-2027 (September 2026). As of the 2026-2027 school year this 2019 programme is no longer the in-force version for première maths spécialité.",
+     "corrected_url": "https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2602917A"
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de mathématiques de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921246A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921246A)",
+     "subjects": [
+      "Mathématiques"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: 'Contenus' + 'Capacités attendues' par domaine (Algèbre-géométrie, Analyse, Probabilités, Algorithmique)",
+     "notes": "SUPERSEDING (future only): un nouveau programme est fixé par arrêté du 26-2-2026 (NOR MENE2602919A, BOEN Hebdo n°14 2026 / Légifrance JORFTEXT000053723251) mais il n'entre en application qu'à la rentrée 2027-2028. Le programme 2019 reste donc le programme en vigueur pour les rentrées 2025 et 2026."
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de physique-chimie de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901635A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901635A)",
+     "subjects": [
+      "Physique-chimie"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: tableaux 'Notions et contenus' / 'Capacités exigibles' par thème + capacités mathématiques et expérimentales",
+     "notes": null
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de physique-chimie de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921249A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921249A)",
+     "subjects": [
+      "Physique-chimie"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: tableaux 'Notions et contenus' / 'Capacités exigibles' par thème",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de sciences de la vie et de la Terre de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901648A.htm",
+     "pdf_url": "https://www.education.gouv.fr/sites/default/files/document/Programme%20de%20sciences%20de%20la%20vie%20et%20de%20la%20Terre%20de%20premi%C3%A8re%20g%C3%A9n%C3%A9rale-251826.pdf",
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901648A)",
+     "subjects": [
+      "Sciences de la vie et de la Terre (SVT)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "both",
+     "granularity": "Enumerable: 3 thèmes, sous-parties avec 'Savoirs' et 'Savoir-faire' + objectifs; capacités listées",
+     "notes": null
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de sciences de la vie et de la Terre de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921252A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921252A)",
+     "subjects": [
+      "Sciences de la vie et de la Terre (SVT)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: thèmes -> sous-parties avec 'Savoirs' et 'Savoir-faire'",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de numérique et sciences informatiques (NSI) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901633A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901633A)",
+     "subjects": [
+      "Numérique et sciences informatiques (NSI)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: rubriques (Représentation des données, Traitement, Interactions, Architectures, Langages/programmation, Algorithmique) avec tableaux 'Contenus' / 'Capacités attendues'",
+     "notes": null
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de numérique et sciences informatiques (NSI) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921247A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921247A)",
+     "subjects": [
+      "Numérique et sciences informatiques (NSI)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: rubriques avec 'Contenus' / 'Capacités attendues'",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de sciences économiques et sociales (SES) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901639A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901639A)",
+     "subjects": [
+      "Sciences économiques et sociales (SES)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: questionnements (Science économique, Sociologie/science politique, Regards croisés) avec 'Objectifs d'apprentissage' listés par question",
+     "notes": null
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de sciences économiques et sociales (SES) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921253A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921253A)",
+     "subjects": [
+      "Sciences économiques et sociales (SES)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: questionnements avec 'Objectifs d'apprentissage' listés",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité d'histoire-géographie, géopolitique et sciences politiques (HGGSP) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901576A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901576A)",
+     "subjects": [
+      "Histoire-géographie, géopolitique et sciences politiques (HGGSP)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: 5 thèmes structurés en axes + jalons; contenu essentiellement prose",
+     "notes": "Légifrance JORFTEXT000038029429."
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité d'histoire-géographie, géopolitique et sciences politiques (HGGSP) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921254A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe254annexe1159180pdf-83247.pdf",
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921254A)",
+     "subjects": [
+      "Histoire-géographie, géopolitique et sciences politiques (HGGSP)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "both",
+     "granularity": "Semi-enumerable: 6 thèmes -> 2 axes + objet de travail conclusif + jalons; contenu prose",
+     "notes": "Légifrance JORFTEXT000038799953. PDF alt: https://www.education.gouv.fr/media/11336/download"
+    },
+    {
+     "title": "Programme d'enseignement de spécialité d'humanités, littérature et philosophie (HLP) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901578A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe578annexe1063002pdf-83919.pdf",
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901578A)",
+     "subjects": [
+      "Humanités, littérature et philosophie (HLP)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "both",
+     "granularity": "Semi-enumerable: 2 semestres, chacun un objet d'étude structuré en périodes/notions; contenu prose",
+     "notes": null
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité d'humanités, littérature et philosophie (HLP) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921255A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921255A)",
+     "subjects": [
+      "Humanités, littérature et philosophie (HLP)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: 2 semestres, objets d'étude/périodes; contenu prose",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de langues, littératures et cultures étrangères (LLCER) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901590A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901590A)",
+     "subjects": [
+      "Langues, littératures et cultures étrangères et régionales (LLCER)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: cadre commun (thématiques/axes) décliné par langue (anglais, allemand, espagnol, italien + anglais monde contemporain, langues régionales); contenu prose, programmes limitatifs annuels d'œuvres",
+     "notes": "Légifrance eli/arrete/2019/1/17/MENE1901590A. La spécialité couvre plusieurs langues via annexes; programmes limitatifs d'œuvres publiés annuellement par note de service."
+    },
+    {
+     "title": "Programme de l'enseignement de spécialité de langues, littératures et cultures étrangères et régionales (LLCER) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921256A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921256A)",
+     "subjects": [
+      "Langues, littératures et cultures étrangères et régionales (LLCER)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: thématiques/axes par langue; contenu prose + programmes limitatifs d'œuvres annuels",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de littérature, langues et cultures de l'Antiquité (LCA) de la classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901582A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901582A)",
+     "subjects": [
+      "Littérature, langues et cultures de l'Antiquité (LCA)"
+     ],
+     "levels": [
+      "Première"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: 3 objets d'étude + corpus; contenu prose, œuvres au programme limitatif annuel",
+     "notes": "Programme limitatif LCA terminale 2024-2025 et 2025-2026: note de service NOR MENE2404047N (BOEN Hebdo n°11 2024)."
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de littérature, langues et cultures de l'Antiquité (LCA) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921257A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921257A)",
+     "subjects": [
+      "Littérature, langues et cultures de l'Antiquité (LCA)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Semi-enumerable: objets d'étude + corpus; contenu prose complété par programme limitatif d'œuvres annuel (voir MENE2404047N pour 2024-2026)",
+     "notes": null
+    },
+    {
+     "title": "Programme d'enseignement de spécialité d'arts des classes de première et terminale de la voie générale (arts plastiques, cinéma-audiovisuel, danse, histoire des arts, musique, théâtre, arts du cirque)",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901567A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901567A); modification arrêté du 19-7-2019 (NOR MENE1921245A, BOEN spécial n°8)",
+     "subjects": [
+      "Arts (arts plastiques, cinéma-audiovisuel, danse, histoire des arts, musique, théâtre, arts du cirque)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (première) / 2020 (terminale) — en vigueur rentrée 2025 et 2026",
+     "format": "html",
+     "granularity": "Semi-enumerable: un arrêté unique avec 7 annexes disciplinaires; chaque domaine a compétences visées/questionnements; contenu prose. Programmes limitatifs annuels par domaine (histoire des arts, cinéma, théâtre, musique)",
+     "notes": "Document unique couvrant les deux niveaux. Modification MENE1921245A: https://www.education.gouv.fr/bo/19/Special8/MENE1921245A.htm . Ex. programme limitatif histoire des arts terminale 2025-2026: arrêté du 7-4-2025, Légifrance JORFTEXT000051532635."
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de biologie-écologie des classes de première et terminale de la voie générale (lycée agricole)",
+     "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038925850",
+     "pdf_url": "https://chlorofil.fr/fileadmin/user_upload/02-diplomes/referentiels/secondaire/bac-general/bac-general-prog-bio-eco.pdf",
+     "bo_reference": "Arrêté du 23 juillet 2019 (co-signé Éducation nationale / Agriculture) — publié au BOEN et au BO du ministère de l'Agriculture (BO-Agri)",
+     "subjects": [
+      "Biologie-écologie (lycée agricole)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (première) / 2020 (terminale) — en vigueur rentrée 2025 et 2026",
+     "format": "pdf",
+     "granularity": "Enumerable: objectifs et sous-objectifs numérotés avec 'Connaissances' / capacités (format référentiel de l'enseignement agricole)",
+     "notes": "Spécialité proposée uniquement dans les lycées d'enseignement agricole. Arrêté du 23-7-2019 (JORFTEXT000038925850) couvre les deux niveaux et remplace l'arrêté première-seul du 1-4-2019 (JORFTEXT000038359215). Référentiel de référence hébergé sur chlorofil.fr."
+    },
+    {
+     "title": "Programme d'enseignement de spécialité de sciences de l'ingénieur (SI) des classes de première et terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901640A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe640annexe1063436pdf-82092.pdf",
+     "bo_reference": "BOEN spécial n°1 du 22 janvier 2019 — arrêté du 17-1-2019 (NOR MENE1901640A)",
+     "subjects": [
+      "Sciences de l'ingénieur (SI)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2019 (première) / 2020 (terminale) — en vigueur rentrée 2025 et 2026",
+     "format": "both",
+     "granularity": "Enumerable: compétences (Analyser, Modéliser, Concevoir, Expérimenter, Communiquer) déclinées en 'Compétences attendues' / 'Connaissances associées' en tableaux",
+     "notes": "Document unique couvrant les deux niveaux (arrêté modifié ultérieurement, version consolidée Légifrance JORFTEXT000038029537). En terminale s'y ajoute un programme complémentaire de sciences physiques (entrée distincte ci-dessous)."
+    },
+    {
+     "title": "Programme de l'enseignement de sciences physiques, complément de l'enseignement de spécialité de sciences de l'ingénieur de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921269A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN spécial n°8 du 25 juillet 2019 — arrêté du 19-7-2019 (NOR MENE1921269A)",
+     "subjects": [
+      "Sciences de l'ingénieur (SI)"
+     ],
+     "levels": [
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2020 (en vigueur rentrée 2025 et 2026)",
+     "format": "html",
+     "granularity": "Enumerable: tableaux 'Notions et contenus' / 'Capacités exigibles' (complément physique-chimie propre à la spécialité SI en terminale)",
+     "notes": "Document distinct: composante sciences physiques obligatoire de la spécialité SI en terminale, en plus du programme SI principal."
+    },
+    {
+     "title": "Programme d'enseignement de spécialité d'éducation physique, pratiques et culture sportives (EPPCS) pour les classes de première et terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/21/Hebdo25/MENE2116606A.htm",
+     "pdf_url": null,
+     "bo_reference": "BOEN n°25 du 24 juin 2021 — arrêté du 2 juin 2021 (NOR MENE2116606A)",
+     "subjects": [
+      "Éducation physique, pratiques et culture sportives (EPPCS)"
+     ],
+     "levels": [
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "version_date": "Rentrée 2021 (première) / 2022 (terminale) — en vigueur rentrée 2025 et 2026",
+     "format": "html",
+     "granularity": "Semi-enumerable: pratique d'au moins 5 APSA sur 3 champs d'apprentissage + apports théoriques structurés en thématiques (3 en première, 2 en terminale); compétences visées listées, reste prose",
+     "notes": "Spécialité la plus récente, créée hors des arrêtés 2019. Document unique couvrant les deux niveaux. Légifrance JORFTEXT000043648296."
+    }
+   ]
+  },
+  {
+   "key": "open-data",
+   "segment": "STRUCTURED / MACHINE-READABLE data hunt — already-digitized versions of the French national curriculum (programmes, socle commun, attendus, repères) in JSON/CSV/XML/RDF/dataset form",
+   "verification_verdict": "mostly_solid",
+   "subjects": [
+    "Français",
+    "Mathématiques",
+    "Enseignement moral et civique (EMC)",
+    "Histoire-Géographie",
+    "Langues vivantes",
+    "Physique-chimie",
+    "SVT",
+    "SES",
+    "EPS",
+    "Arts",
+    "Sciences numériques et technologie",
+    "Toutes disciplines (référentiels transversaux: niveaux, disciplines, compétences)"
+   ],
+   "coverage_assessment": "The FULL official curriculum content (enumerated attendus, repères, programme prose) CANNOT be reconstructed from already-structured sources alone — no one, including the ministry, has published the programme content itself as JSON/CSV. What DOES exist in clean machine-readable form is the TAXONOMY SKELETON: ScoLOMFR (SKOS/RDF, v11.0/2025, on GitLab, official, maintained) plus the BCN code lists give authoritative structured vocabularies for cycles, niveaux, disciplines and competency labels — the exact scaffold an os-taxonomy clone needs for its subject/level tree. The actual programme text remains in PDF (cycles 2/3/4, rentrée 2020) or DOCX/ODT/RTF/EPUB (seconde 2019, cycles 2015 versions) on data.gouv.fr, and legal instruments (socle décret, arrêtés-programmes) are structured only as legal XML/JSON via Légifrance's Piste API without the annexe content. So: structured layer for the tree = yes (ScoLOMFR+BCN); structured layer for the leaf content (attendus) = no, PDF/DOCX extraction is unavoidable.",
+   "gaps": [
+    "No official or community JSON/CSV of the ACTUAL programme content (attendus de fin d'année, repères annuels, compétences détaillées) exists — every source stops at document formats. PDF/DOCX extraction is mandatory for the leaf content.",
+    "No structured version reflects the 2024-2025 français/maths reform (new cycle 1-2 programmes for rentrée 2025/2026): data.gouv.fr datasets are frozen at rentrée 2020, and ScoLOMFR encodes labels not the new attendus. The newest reform content is only on éduscol/BO as fresh PDFs.",
+    "ScoLOMFR gives competency/discipline/level vocabularies but the numbered SKOS files (~60) are not self-describing by subject in the listing — each RDF must be fetched to map notation→meaning; no single manifest CSV of 'which vocab = which nomenclature' was found in-repo (implied by ScoLOMFR nomenclature numbering doc on reseau-canope, which is 403 to bots).",
+    "The givingsense FrScol ontologies are the only source that structures programme CONTENT as data, but they are ~2014, cover only collège Histoire-Géo-EC, and predate all current programmes — unusable as current content.",
+    "data.education.gouv.fr opendata portal (ODS) surfaced no curriculum-content dataset (only statistics: results, staffing, TIMSS); its homepage is JS-rendered so a deeper API sweep (records API) was not exhausted — a residual chance of a nomenclature dataset there.",
+    "Réseau Canopé ScoLOMFR download/browser pages and the BCN portal are gated (403/404/behind pleiade.education.fr) to automated fetch; the GitLab mirror is the reliable machine path, but license terms (Licence Ouverte vs LOM licence) were not confirmed from the repo's license_lom.txt/lisezmoi files — must read before redistribution.",
+    "Légifrance Piste API can deliver the arrêtés fixant les programmes as structured legal XML/JSON, but confirming that any arrêté embeds the programme annexe as structured data (vs a PDF annexe reference) was not verified."
+   ],
+   "documents": [
+    {
+     "title": "ScoLOMFR Vocab — référentiel officiel de vocabulaires de l'Éducation nationale (SKOS/RDF, SKOS-XL, XML, BCN, HTML)",
+     "url": "https://forge.apps.education.fr/vocabnomen/scolomfr-vocab",
+     "pdf_url": null,
+     "subjects": [
+      "Toutes disciplines (référentiels transversaux: niveaux, disciplines, compétences)",
+      "Français",
+      "Mathématiques"
+     ],
+     "levels": [
+      "Cycle 1",
+      "Cycle 2",
+      "Cycle 3",
+      "Cycle 4",
+      "Lycée",
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e",
+      "Seconde",
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "dataset",
+     "granularity": "per-competency / per-concept codes: ~60 numbered SKOS vocabularies (RDF/XML), each a controlled list of concepts with skos:prefLabel, notation, broader/narrower hierarchy. Vocab 28 = compétences/champs disciplinaires; other vocabularies cover niveaux éducatifs, disciplines, diplômes, and specific programme vocabularies (e.g. programmes de français et mathématiques du cycle 3, éducation à la sexualité). This is the TAXONOMY SKELETON (subjects/levels/cycles/competency labels), NOT the full prose of attendus. Formats present: SKOS/, SKOS-XL/, SKOS-XL-Global/, XML/, HTML/, BCN/ (Base Centrale des Nomenclatures aligned files), plus DTD.",
+     "bo_reference": null,
+     "version_date": "v11.0/2025, published 2025-09-25 (prior: v10.1 2024-12-18, v10.0 2024-06-27)",
+     "notes": "PRIMARY structured resource. Official, maintained by Réseau Canopé / DGESCO. Git repo created 2025-04-06, default branch main, public, versioned by git tags (v10.1, v11.0). Public API works: forge.apps.education.fr/api/v4/projects/vocabnomen%2Fscolomfr-vocab. Human portal: https://www.reseau-canope.fr/scolomfr/ (telechargements/browser pages return 403/404 to bots — use the GitLab repo instead). Machine-readable and directly ingestible for the taxonomy layer (marble os-taxonomy equivalent of subjects+grades+strands). Does NOT contain the enumerated attendus/repères text — those still require PDF extraction."
+    },
+    {
+     "title": "Ontologies descriptives du système et des programmes scolaires français (givingsense.eu / FrScol)",
+     "url": "https://www.data.gouv.fr/datasets/ontologies-descriptives-du-systeme-et-des-programmes-scolaires-francais",
+     "pdf_url": null,
+     "subjects": [
+      "Histoire-Géographie",
+      "Enseignement moral et civique (EMC)",
+      "Toutes disciplines (référentiels transversaux: niveaux, disciplines, compétences)"
+     ],
+     "levels": [
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "unclear",
+     "format": "dataset",
+     "granularity": "OWL/XML ontologies: (1) ontologie du système scolaire, (2) ontologie générique de description d'un programme, (3) ontologie des compétences d'après Bloom, (4-7) ontologies détaillées des programmes d'Histoire-Géographie-Éducation civique de 6e/5e/4e/3e. The HG ontologies enumerate programme items as structured concepts — good extraction granularity but for OLD (pre-2016) programmes and only collège HG-EC.",
+     "bo_reference": null,
+     "version_date": "Legacy (dataset ~2014, describes pre-2015 programmes)",
+     "notes": "Third-party academic (givingsense.eu). 7 XML resources hosted at http://givingsense.eu/frscol/ (host still responds, HTTP 303 redirect). OUTDATED — describes the 2008-era HG-EC collège programmes, not the current 2016/2020 cycles or the 2024-25 reforms. Useful as a data-modelling reference / proof-of-concept for structuring programmes, not as current content."
+    },
+    {
+     "title": "Programmes d'enseignement de l'école élémentaire et du collège : cycles 2, 3 et 4 (data.gouv.fr)",
+     "url": "https://www.data.gouv.fr/datasets/programmes-denseignement-de-lecole-elementaire-et-du-college-cycles-2-3-et-4",
+     "pdf_url": "https://static.data.gouv.fr/resources/programmes-denseignement-de-lecole-elementaire-et-du-college-cycles-2-3-et-4/20210126-145727/ensel714-annexe1-1312885.pdf",
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Enseignement moral et civique (EMC)",
+      "Histoire-Géographie",
+      "Langues vivantes",
+      "Physique-chimie",
+      "SVT"
+     ],
+     "levels": [
+      "Cycle 2",
+      "Cycle 3",
+      "Cycle 4",
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e"
+     ],
+     "status": "in_force",
+     "format": "dataset",
+     "granularity": "6 resources but NOT truly structured: current programmes (rentrée 2020) are PDF only (3 files, one per cycle); older 2015 versions are epub/odt/rtf. Prose chapters with embedded competency tables. Machine-DISTRIBUTED but not machine-STRUCTURED — still needs PDF/odt extraction to enumerate attendus.",
+     "bo_reference": "BO spécial n°11 du 26-11-2015 (base) + arrêté 2020 (rentrée 2020 update)",
+     "version_date": "Rentrée 2020 (current PDFs); 2015 (epub/odt/rtf)",
+     "notes": "Official ministry dataset but a document repository, not a dataset in the JSON/CSV sense. The odt/rtf/epub of the 2015 version are the most parseable machine formats (XML-based) if extraction of the older text is acceptable. Confirms: no official JSON/CSV of programme content exists here."
+    },
+    {
+     "title": "Programmes d'enseignement de seconde générale et technologique à partir de 2019 (data.gouv.fr)",
+     "url": "https://www.data.gouv.fr/datasets/programmes-denseignement-de-seconde-generale-et-technologique-a-partir-de-2019",
+     "pdf_url": null,
+     "subjects": [
+      "Français",
+      "Mathématiques",
+      "Histoire-Géographie",
+      "Langues vivantes",
+      "Physique-chimie",
+      "SVT",
+      "SES",
+      "EPS",
+      "Enseignement moral et civique (EMC)",
+      "Arts",
+      "Sciences numériques et technologie"
+     ],
+     "levels": [
+      "Seconde"
+     ],
+     "status": "in_force",
+     "format": "dataset",
+     "granularity": "21 resources, mostly DOCX (one per discipline) + a few PDF. DOCX are OOXML (parseable) with headings/tables per programme — semi-structured, better extraction target than flat PDF. Still no per-competency codes; structure must be inferred from Word styles.",
+     "bo_reference": "Arrêtés du 17-01-2019 (NOR ENE19015xx), BO spécial n°1 du 22 janvier 2019",
+     "version_date": "Rentrée 2019 (in force for seconde GT)",
+     "notes": "Official. DOCX-per-subject makes this the most extraction-friendly official programme dataset for lycée seconde. Files hosted on static.data.gouv.fr."
+    },
+    {
+     "title": "Programme d'enseignement moral et civique (data.gouv.fr)",
+     "url": "https://www.data.gouv.fr/datasets/programme-denseignement-moral-et-civique",
+     "pdf_url": null,
+     "subjects": [
+      "Enseignement moral et civique (EMC)"
+     ],
+     "levels": [
+      "Cycle 2",
+      "Cycle 3",
+      "Cycle 4",
+      "Lycée"
+     ],
+     "status": "unclear",
+     "format": "dataset",
+     "granularity": "6 resources (document formats). EMC programme text; the older EMC programme was notably table-structured (connaissances/capacités/objets d'enseignement) which extracts into rows well, but distributed as documents not as a table dataset.",
+     "bo_reference": "BO 2015 (EMC) superseded by BO 2018/2024 revisions",
+     "version_date": "Needs verification — dataset may predate the 2024 EMC revision applicable rentrée 2025",
+     "notes": "Verify currency: EMC programmes were revised (BO 2024) with staged entry into force; this data.gouv dataset likely holds the older version."
+    },
+    {
+     "title": "BCN — Base Centrale des Nomenclatures (niveaux, disciplines, MEF) — embedded in ScoLOMFR + data.education.gouv.fr",
+     "url": "https://infocentre.pleiade.education.fr/bcn/",
+     "pdf_url": null,
+     "subjects": [
+      "Toutes disciplines (référentiels transversaux: niveaux, disciplines, compétences)"
+     ],
+     "levels": [
+      "CP",
+      "CE1",
+      "CE2",
+      "CM1",
+      "CM2",
+      "6e",
+      "5e",
+      "4e",
+      "3e",
+      "Seconde",
+      "Première",
+      "Terminale"
+     ],
+     "status": "in_force",
+     "format": "dataset",
+     "granularity": "Reference nomenclatures as coded tables: niveaux de formation (N_NIVEAU_FORMATION_DIPLOME), disciplines, MEF (modules élémentaires de formation), matières d'enseignement. These are the official coded lists for levels and subjects — exactly the enum backbone. Available as XML/HTML in the ScoLOMFR repo BCN/ folder (scolomfr_bcn.xml, scolomfr-etendu_bcn.xml) and as downloadable tables on the BCN portal.",
+     "bo_reference": null,
+     "version_date": "Continuously maintained",
+     "notes": "The BCN gives the authoritative code lists for grade levels and subjects (what marble os-taxonomy would key on). ScoLOMFR aligns to it (BCN/ folder in the GitLab repo, directly fetchable). BCN portal itself is behind pleiade.education.fr; the ScoLOMFR mirror is the easiest machine access.",
+     "verification_note": "Dead/decommissioned host: direct fetch failed with ECONNREFUSED (193.48.5.43:443). Confirmed via search that BCN has been migrated off the infocentre.pleiade.education.fr domain, which is being retired ('previous URL will soon no longer be available'). BCN (Base Centrale des Nomenclatures) itself is real and current; it now lives at bcn.depp.education.fr. Use the corrected URL.",
+     "corrected_url": "https://bcn.depp.education.fr/bcn/"
+    },
+    {
+     "title": "Socle commun de connaissances, de compétences et de culture — décret n°2015-372 (Légifrance)",
+     "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000030426718/",
+     "pdf_url": null,
+     "subjects": [
+      "Toutes disciplines (référentiels transversaux: niveaux, disciplines, compétences)"
+     ],
+     "levels": [
+      "Cycle 2",
+      "Cycle 3",
+      "Cycle 4"
+     ],
+     "status": "in_force",
+     "format": "html",
+     "granularity": "Prose + 5 domains structured as an annexe. Légifrance offers it as HTML (article/annexe structure) and the Légifrance/DILA open API (Piste) exposes LODA/JORF texts as structured JSON/XML — so the socle decree IS retrievable in structured legal-XML form, but the content granularity is domain-level prose, not per-competency codes.",
+     "bo_reference": "Décret 2015-372 du 31-03-2015, JO 02-04-2015; BO n°17 du 23 avril 2015",
+     "version_date": "2015 (in force; consolidated version on Légifrance)",
+     "notes": "Légifrance API (Piste / DILA) gives arrêtés & décrets as structured JSON/XML — this is the structured path for the LEGAL instruments (arrêtés fixant les programmes) even though the programme ANNEXES are prose. The arrêtés-programmes reference their annexe content rather than encoding it as data."
+    }
+   ]
+  },
+  {
+   "key": "lycee-enseignements-optionnels",
+   "segment": "Enseignements optionnels du lycée voie générale (DGEMC, maths complémentaires/expertes, LCA, LVC, arts, EPS) + Grand oral — gap-fill pass after completeness critic",
+   "verification_verdict": "solid (PDF URLs HTTP-200-checked by researching agent; Cloudflare-blocked BO HTML confirmed via Légifrance cross-reference)",
+   "subjects": [
+    "Arts du cirque",
+    "Arts plastiques",
+    "Cinéma-audiovisuel",
+    "Danse",
+    "Droit et grands enjeux du monde contemporain (DGEMC)",
+    "Grand oral (épreuve orale terminale)",
+    "Histoire des arts",
+    "Langue vivante C (LVC)",
+    "Langue vivante C (LVC) — enseignement optionnel de langue vivante étrangère/régionale",
+    "Langues et cultures de l'Antiquité (grec)",
+    "Langues et cultures de l'Antiquité (latin)",
+    "Mathématiques complémentaires",
+    "Mathématiques expertes",
+    "Musique",
+    "Théâtre",
+    "Éducation physique et sportive (EPS) — enseignement optionnel"
+   ],
+   "coverage_assessment": "The optional layer of the voie générale is now fully mapped: DGEMC (corrected BO reference: arrêté 19-7-2019, BO spécial n°8 — the completeness critic's own citation was wrong), maths complémentaires (2019 in force + 2026 successor effective rentrée 2027), maths expertes (2019, no renewal), LCA latin/grec (separate 2nde+1re and Tle arrêtés), LVC (2025 programme phasing in through 2026-2027), a single arts arrêté covering all 7 disciplines, EPS optionnel, and the Grand oral framework note de service.",
+   "gaps": [
+    "Mission brief error corrected: DGEMC terminale programme is arrêté du 19 juillet 2019 / BO spécial n°8 du 25 juillet 2019 (NOR MENE1921266A), NOT arrêté 17-1-2019 / BO spécial n°1 as stated in the task.",
+    "education.gouv.fr /bo/*.htm and /media/*/download URLs are Cloudflare-protected (HTTP 403 to both WebFetch and curl), so BO HTML pages could not be fetched directly; contents were confirmed via search snippets + Légifrance. All content was cross-verified, but the .htm BO URLs themselves were not directly rendered.",
+    "Direct annexe PDF for the LCA seconde/première optional programme (MENE1901579A) was not isolated — only the terminale LCA PDF (spe267) was confirmed.",
+    "Arts optional: no single small PDF for the framework programme was found; the confirmed PDF is the full 19 MB BO spécial n°1. Per-discipline éduscol PDFs exist but were not each individually verified. Note the yearly 'programmes limitatifs' (works studied) are separate texts (MENE2504603N for 2025-2026, MENE2536492N for 2026-2027).",
+    "EPS optional: the official ministry/éduscol annexe PDF is Cloudflare-blocked; an academy-hosted extract was used as pdf_url. The exact NOR of the 24 June 2021 (BO n°25) modification was not captured.",
+    "Two future/adopted-but-not-in-force replacements were identified and flagged: (1) new maths complémentaires programme arrêté 26 février 2026 (effective rentrée 2027); (2) new LV programme arrêté 5 mai 2025 becoming fully in force across the cycle terminal at rentrée 2026-2027. Maths expertes has NO 2026 renewal (still 2019).",
+    "Grand oral exact NOR references of the 13-02-2020 notes de service (général vs technologique) were not individually captured; only BO dates confirmed."
+   ],
+   "documents": [
+    {
+     "title": "Programme de l'enseignement optionnel de droit et grands enjeux du monde contemporain (DGEMC) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921266A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/annexeprogrammedgemcmodifiepdf-84138.pdf",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 — arrêté du 19 juillet 2019 (NOR MENE1921266A), modifié par arrêté du 15 avril 2022 ; Légifrance JORFTEXT000038800008",
+     "version_date": "2019-07-19 (modifié 2022-04-15)",
+     "subjects": [
+      "Droit et grands enjeux du monde contemporain (DGEMC)"
+     ],
+     "levels": [
+      "Terminale générale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme (annexe consolidée)",
+     "notes": "CORRECTION to the mission brief: DGEMC's terminale programme is NOT in BO spécial n°1 du 22-1-2019 / arrêté 17-1-2019. It is arrêté du 19 juillet 2019, BO spécial n°8 du 25 juillet 2019. 3h option. The 15-04-2022 modification extended it to the voie technologique and updated the annexe (the linked PDF is that consolidated modified version). éduscol landing: https://eduscol.education.gouv.fr/5781/programmes-et-ressources-en-droit-et-grands-enjeux-du-monde-contemporain-voie-gt (éduscol 403s to fetchers). The 403 education.gouv.fr HTML URL confirmed valid via Légifrance + search."
+    },
+    {
+     "title": "Programme de l'enseignement optionnel de mathématiques complémentaires de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921265A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe265annexe1159134pdf-84162.pdf",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 — arrêté du 19 juillet 2019 (NOR MENE1921265A)",
+     "version_date": "2019-07-19",
+     "subjects": [
+      "Mathématiques complémentaires"
+     ],
+     "levels": [
+      "Terminale générale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme (annexe)",
+     "notes": "Currently in force for 2026-2027. 3h option. SUPERSEDED going forward: a new programme was adopted by arrêté du 26 février 2026 (BO n°14 du 2 avril 2026, NOR MENE2902920A, Légifrance JORFTEXT000053723259) that replaces this annexe with effect at the rentrée 2027-2028 — see separate entry. PDF confirmed HTTP 200."
+    },
+    {
+     "title": "Programme de l'enseignement optionnel de mathématiques complémentaires de la classe terminale de la voie générale (nouveau programme 2026)",
+     "url": "https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2902920A",
+     "pdf_url": null,
+     "bo_reference": "BO n°14 du 2 avril 2026 — arrêté du 26 février 2026 (NOR MENE2902920A) ; Légifrance JORFTEXT000053723259",
+     "version_date": "2026-02-26",
+     "subjects": [
+      "Mathématiques complémentaires"
+     ],
+     "levels": [
+      "Terminale générale"
+     ],
+     "format": "html",
+     "status": "unclear",
+     "granularity": "full programme (annexe)",
+     "notes": "Adopted but NOT yet in force: applies from the rentrée 2027-2028. Part of the 2026 maths reform (also renews maths spécialité première/terminale MENE2602917A/MENE2602919A and maths technologique MENE2602921A). Will supersede the 2019 maths complémentaires programme. Full BO PDF: https://www.education.gouv.fr/sites/default/files/document/Bulletin%20officiel%20n%C2%B0%2014%20du%202%20avril%202026-515432.pdf"
+    },
+    {
+     "title": "Programme de l'enseignement optionnel de mathématiques expertes de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921264A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe264annexe1158825pdf-84165.pdf",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 — arrêté du 19 juillet 2019 (NOR MENE1921264A) ; Légifrance JORFTEXT000038799998",
+     "version_date": "2019-07-19",
+     "subjects": [
+      "Mathématiques expertes"
+     ],
+     "levels": [
+      "Terminale générale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme (annexe)",
+     "notes": "3h option (nombres complexes, arithmétique, matrices/graphes, chaînes de Markov). NO 2026 renewal found — unlike maths complémentaires and maths spécialité, maths expertes was not part of the BO n°14 du 2 avril 2026 reform, so the 2019 programme remains the current and only in-force version. PDF confirmed HTTP 200. Légifrance confirmed arrêté date/title/level."
+    },
+    {
+     "title": "Programme d'enseignement optionnel de langues et cultures de l'Antiquité (LCA latin / LCA grec) — classe de seconde GT et classe de première de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901579A.htm",
+     "pdf_url": null,
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 — arrêté du 17 janvier 2019 (NOR MENE1901579A)",
+     "version_date": "2019-01-17",
+     "subjects": [
+      "Langues et cultures de l'Antiquité (latin)",
+      "Langues et cultures de l'Antiquité (grec)"
+     ],
+     "levels": [
+      "Seconde générale et technologique",
+      "Première générale"
+     ],
+     "format": "html",
+     "status": "in_force",
+     "granularity": "full programme (annexe, latin + grec in one text)",
+     "notes": "The LCA optional programme covers BOTH latin and grec in a single text. This arrêté covers seconde + première; the terminale companion is a separate arrêté (see next entry). éduscol landing: https://eduscol.education.gouv.fr/5808/programmes-et-ressources-en-langues-et-cultures-de-l-antiquite-voie-gt . 3h option each level. Exam modalities modified for session 2021 (arrêté MENE1836125A, BO n°6/2019). Direct annexe PDF not isolated during this pass."
+    },
+    {
+     "title": "Programme de l'enseignement optionnel de langues et cultures de l'Antiquité (LCA latin / LCA grec) de la classe terminale de la voie générale",
+     "url": "https://www.education.gouv.fr/bo/19/Special8/MENE1921267A.htm",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/spe267annexe1158694pdf-83517.pdf",
+     "bo_reference": "BO spécial n°8 du 25 juillet 2019 — arrêté du 19 juillet 2019 (NOR MENE1921267A)",
+     "version_date": "2019-07-19",
+     "subjects": [
+      "Langues et cultures de l'Antiquité (latin)",
+      "Langues et cultures de l'Antiquité (grec)"
+     ],
+     "levels": [
+      "Terminale générale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme (annexe, latin + grec)",
+     "notes": "Terminale companion to the seconde/première LCA optional programme. Covers both latin and grec. PDF confirmed HTTP 200."
+    },
+    {
+     "title": "Programmes d'enseignements communs et optionnels (dont langue vivante C — LVC) de langues vivantes étrangères et régionales — collège et lycée général et technologique (programmes 2025)",
+     "url": "https://www.education.gouv.fr/bo/2025/Hebdo22/MENE2504621A",
+     "pdf_url": null,
+     "bo_reference": "BO n°22 du 29 mai 2025 — arrêté du 5 mai 2025 (NOR MENE2504621A) ; Légifrance JORFTEXT000051666594",
+     "version_date": "2025-05-05",
+     "subjects": [
+      "Langue vivante C (LVC) — enseignement optionnel de langue vivante étrangère/régionale"
+     ],
+     "levels": [
+      "Seconde générale et technologique",
+      "Première générale/technologique",
+      "Terminale générale/technologique"
+     ],
+     "format": "html",
+     "status": "in_force",
+     "granularity": "full programme (commun + optionnel, 12 langues)",
+     "notes": "CURRENT programme. LVC is the optional third living language (3h). Phased entry into force: seconde at rentrée 2025-2026; première AND terminale at rentrée 2026-2027 — so by school year 2026-2027 this new programme is fully in force across seconde + cycle terminal, replacing the 2019 LV programme. éduscol landing: https://eduscol.education.fr/1726/programmes-et-ressources-en-langues-vivantes-voie-gt"
+    },
+    {
+     "title": "Programme d'enseignement commun et optionnel de langues vivantes (dont LVC) — seconde GT et cycle terminal des voies générale et technologique (programme 2019)",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901585A.htm",
+     "pdf_url": null,
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 — arrêté du 17 janvier 2019 (NOR MENE1901585A)",
+     "version_date": "2019-01-17",
+     "subjects": [
+      "Langue vivante C (LVC)"
+     ],
+     "levels": [
+      "Seconde générale et technologique",
+      "Première",
+      "Terminale"
+     ],
+     "format": "html",
+     "status": "superseded",
+     "granularity": "full programme (commun + optionnel)",
+     "notes": "The 2019 LV programme that governed LVC. Being replaced by the 2025 programme (arrêté 5 mai 2025) — superseded in seconde since rentrée 2025 and in première/terminale from rentrée 2026-2027. Included here as the immediately-prior in-force version."
+    },
+    {
+     "title": "Programme d'enseignement optionnel d'arts (arts plastiques, cinéma-audiovisuel, danse, histoire des arts, musique, théâtre, arts du cirque) — classe de seconde GT et classes de première et terminale des voies générale et technologique",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901566A.htm",
+     "pdf_url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/06/0/SP1_MEN_22_1_2019_10H40_1064060.pdf",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 — arrêté du 17 janvier 2019 (NOR MENE1901566A), programme terminale modifié par arrêté du 19 juillet 2019 (BO spécial n°8, NOR MENE1921263A)",
+     "version_date": "2019-01-17 (terminale modifié 2019-07-19)",
+     "subjects": [
+      "Arts plastiques",
+      "Cinéma-audiovisuel",
+      "Danse",
+      "Histoire des arts",
+      "Musique",
+      "Théâtre",
+      "Arts du cirque"
+     ],
+     "levels": [
+      "Seconde générale et technologique",
+      "Première",
+      "Terminale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme covering all 7 arts disciplines (single arrêté)",
+     "notes": "A SINGLE optional-arts arrêté covers all seven arts disciplines across seconde + cycle terminal. Terminale portion modified by arrêté 19-7-2019 (MENE1921263A, https://www.education.gouv.fr/bo/19/Special8/MENE1921263A.htm). pdf_url is the FULL BO spécial n°1 (19 MB, HTTP 200 confirmed) — contains the arts annexe among all reform programmes; per-discipline éduscol PDFs also exist. SEPARATE from the programme: yearly 'programmes limitatifs' set the specific works studied — e.g. BO 2025 Hebdo15 MENE2504603N (2025-2026) and BO 2026 Hebdo4 MENE2536492N (renewed rentrée 2026); these are companions, not the framework programme."
+    },
+    {
+     "title": "Programme d'enseignement commun et d'enseignement optionnel d'éducation physique et sportive (EPS) — seconde GT et classes de première et terminale des voies générale et technologique",
+     "url": "https://www.education.gouv.fr/bo/19/Special1/MENE1901574A.htm",
+     "pdf_url": "https://ww2.ac-poitiers.fr/eps/sites/eps/IMG/pdf/programme_option_eps.pdf",
+     "bo_reference": "BO spécial n°1 du 22 janvier 2019 — arrêté du 17 janvier 2019 (NOR MENE1901574A) ; enseignement optionnel modifié au BO n°25 du 24 juin 2021",
+     "version_date": "2019-01-17 (option modifiée 2021-06-24)",
+     "subjects": [
+      "Éducation physique et sportive (EPS) — enseignement optionnel"
+     ],
+     "levels": [
+      "Seconde générale et technologique",
+      "Première",
+      "Terminale"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "full programme (commun + optionnel in one arrêté)",
+     "notes": "EPS optional programme is part of the common+optional EPS arrêté. 3h option; ≥2/3 practice. The optional section was modified by an arrêté published at BO n°25 du 24 juin 2021. Official éduscol landing: https://eduscol.education.gouv.fr/5784/programmes-et-ressources-en-education-physique-et-sportive-eps-voie-gt (403s to fetchers). pdf_url is an academy-hosted extract of the optional programme (HTTP 200); the ministry media PDF (education.gouv.fr/media/11270/download) is Cloudflare-403 to fetchers."
+    },
+    {
+     "title": "Grand oral — épreuve orale terminale du baccalauréat général et technologique (cadre / définition officielle)",
+     "url": "https://eduscol.education.gouv.fr/5661/presentation-du-grand-oral",
+     "pdf_url": "https://eduscol.education.gouv.fr/sites/default/files/document/voie-ggrand-oraldoc-consolidepdf-102120.pdf",
+     "bo_reference": "Notes de service au BOEN spécial n°2 du 13 février 2020 (une pour le bac général, une pour le bac technologique), modifiées par le BOEN n°31 du 26 août 2021 puis le BOEN n°36 du 28 septembre 2023",
+     "version_date": "2020-02-13 (modifiée 2021-08-26 et 2023-09-28)",
+     "subjects": [
+      "Grand oral (épreuve orale terminale)"
+     ],
+     "levels": [
+      "Terminale générale",
+      "Terminale technologique"
+     ],
+     "format": "both",
+     "status": "in_force",
+     "granularity": "note de service définissant durée, organisation, objectifs et critères d'évaluation",
+     "notes": "Épreuve de 20 min + 20 min de préparation, notée sur 20. The pdf_url is the consolidated note de service (HTTP 200 confirmed). A more recent FAQ (avril 2025) exists on éduscol. Defined by note de service, not an 'arrêté programme'."
+    }
+   ]
+  }
+ ],
+ "completeness_review": {
+  "missing_items": [
+   {
+    "segment": "PREMIÈRE + TERMINALE voie générale — TRONC COMMUN / spécialités",
+    "what": "DGEMC (Droit et grands enjeux du monde contemporain) is entirely absent. It is a 3h enseignement optionnel offered ONLY in Terminale de la voie générale (arrêté 17-1-2019, BO spécial n°1 du 22-1-2019), one of the most recognizable Terminale-générale options. No segment mentions it, not even as excluded-by-scope. A French lycée teacher would immediately notice its absence.",
+    "severity": "high",
+    "where_to_find": "Programme de droit et grands enjeux du monde contemporain, classe terminale voie générale — arrêté 17-1-2019, BO spécial n°1 du 22 janvier 2019 (éduscol 'programmes et ressources DGEMC')."
+   },
+   {
+    "segment": "PREMIÈRE + TERMINALE voie générale (cycle terminal)",
+    "what": "There is no segment mapping the enseignements OPTIONNELS of the cycle terminal voie générale as a group. The whole optional layer is unmapped: LCA latin, LCA grec, LVC (langue vivante C), the artistic options (arts plastiques / cinéma-audiovisuel / danse / histoire des arts / musique / théâtre / arts du cirque), EPS optionnel, hippologie-équitation (agricole), plus maths complémentaires / maths expertes and DGEMC in Terminale. Only maths comp/expertes are acknowledged (as out-of-scope). These are part of the voie générale offer alongside the 3 spécialités + 2 spécialités.",
+    "severity": "high",
+    "where_to_find": "BO spécial n°1 du 22 janvier 2019 (options langues, arts, EPS); LCA/LVC options; maths complémentaires & maths expertes Terminale (arrêté 19-7-2019)."
+   },
+   {
+    "segment": "PREMIÈRE + TERMINALE voie générale — spécialités",
+    "what": "Terminale 'Mathématiques complémentaires' and 'Mathématiques expertes' are acknowledged only as excluded-by-scope in the gaps, but they are real, distinct programme documents forming part of the voie générale cycle terminal (chosen by students who did / did not keep the maths spécialité). For an ENTIRE-curriculum map they should be captured as documents, not silently dropped.",
+    "severity": "medium",
+    "where_to_find": "Programmes de mathématiques complémentaires et de mathématiques expertes, classe terminale voie générale — arrêté 19-7-2019, BO n°36 du 4-10-2019."
+   },
+   {
+    "segment": "SYSTEM MAP + PREMIÈRE/TERMINALE",
+    "what": "Scope inconsistency around the voie technologique: the system map lists 'séries technologiques' as a subject and pins the technological-series horaires (ST2S, STL, STD2A, STI2D, STMG, STHR), but no segment maps any technological-series PROGRAMME (each série has its own specialité programmes, e.g. STMG management/droit-économie, STI2D, STL, ST2S). Either the techno track is in scope (then its programmes are a large hole) or it is out of scope (then the horaires/subject listing should be flagged as reference-only). Also STAV (Sciences et technologies de l'agronomie et du vivant, série technologique agricole) is missing from the enumerated list of technological series.",
+    "severity": "medium",
+    "where_to_find": "Grilles horaires séries techno (arrêté 16-7-2018); série STAV via chlorofil.fr / BO-Agri; per-série programmes on éduscol 'voie technologique'."
+   },
+   {
+    "segment": "PREMIÈRE + TERMINALE voie générale — TRONC COMMUN",
+    "what": "The Grand oral (épreuve terminale du baccalauréat, voie générale) has an official framework/definition and is a defining element of the cycle terminal, but is not mentioned. The segment flags per-subject bac épreuve definitions as a separate pass but does not name the Grand oral specifically.",
+    "severity": "low",
+    "where_to_find": "Note de service définissant l'épreuve orale terminale (Grand oral) du baccalauréat général et technologique (BO 2020, révisions ultérieures)."
+   },
+   {
+    "segment": "CYCLE 4 — collège / SYSTEM MAP",
+    "what": "Collège enseignements facultatifs are absent: chant choral / chorale (enseignement facultatif with its own referential), and the LCA offer at collège is captured but the facultatif structure (latin dès la 5e, grec en 3e) plus 'langues et cultures européennes' / bilangues are not surfaced. Chorale in particular is a distinct facultatif with a national framework.",
+    "severity": "low",
+    "where_to_find": "Enseignement facultatif de chant choral au collège (BO); dispositifs bilangue / sections européennes (circulaires collège)."
+   },
+   {
+    "segment": "Cross-segment (collège + lycée)",
+    "what": "Sections internationales, sections européennes/de langues orientales (SELO), and dispositifs bilangues are language-teaching structures with their own programmes/aménagements and are not represented anywhere. Minor for a programme-content map but a teacher would note their absence from a 'complete' curriculum inventory.",
+    "severity": "low",
+    "where_to_find": "Programmes/aménagements sections internationales (arrêtés par langue); circulaires SELO."
+   },
+   {
+    "segment": "PREMIÈRE + TERMINALE voie générale — enseignement scientifique",
+    "what": "The hint about 'enseignement scientifique changes' is only partially addressed: the 2023 addition of the mathematics component is captured, but any post-2023 / 2025-2026 revision of enseignement scientifique under the extension of the reform to lycée is left unconfirmed (the segment flags it but does not resolve it). Worth an explicit verification pass since the brief singled it out.",
+    "severity": "low",
+    "where_to_find": "éduscol 'enseignement scientifique 1re/Tle voie générale'; check for any arrêté modifying the 2019/2023 programmes for rentrée 2025/2026."
+   }
+  ],
+  "overall_completeness": "Strong and largely complete. All 15 grade levels (PS→Terminale) are covered, all 13 lycée spécialités are present and correctly named, the socle commun / attendus de fin d'année / repères annuels are correctly scoped (incl. the correct note that they don't apply to cycle 1 or lycée), and the recent reform chain (2024 cycle 1-2, 2025 cycle 3, 2026 cycle 4 français-maths; 2024 EMC; 2025-2026 EVAR/EVARS; 2026 LVE/EPS/HG/sciences-et-technologie phased reforms; 2026 maths seconde/terminale) is well tracked. The material gaps are concentrated in ONE area: the lycée voie générale OPTIONAL layer. The single most teacher-obvious omission is DGEMC (Terminale-générale option), entirely absent. Beyond that, the cycle-terminal enseignements optionnels (LCA latin/grec, LVC, arts options, EPS option, maths complémentaires/expertes, hippologie) are not mapped as a group. Secondary issues: a scope inconsistency on the voie technologique (horaires listed but no programmes; STAV missing), and minor absences (Grand oral framework, chorale facultatif, sections internationales/européennes/bilangue). The enseignement scientifique post-2023 revision flagged in the brief remains unresolved but is correctly noted as a follow-up."
+ }
+}

@@ -1,0 +1,18 @@
+Official curriculum content notice
+==================================
+
+The verbatim standard texts in data/fr-curriculum-standards.json, and any
+quoted programme content elsewhere in this repository, are extracts from
+official publications of the Ministère de l'Éducation nationale (programmes
+d'enseignement, attendus de fin d'année, socle commun, Bulletin officiel de
+l'éducation nationale).
+
+They are reproduced under the Licence Ouverte / Open Licence v2.0 (Etalab):
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+
+Attribution: Ministère de l'Éducation nationale. Per-document references
+(arrêté, Bulletin officiel, URL) are listed in data/sources.json.
+
+All original work in this repository (micro-topics, dependency graph,
+clusters, schemas, viewer, documentation) is licensed under the MIT License
+(see LICENSE).

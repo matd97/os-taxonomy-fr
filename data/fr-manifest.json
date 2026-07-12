@@ -1,0 +1,76 @@
+{
+ "dataset": "French Curriculum Skill Taxonomy",
+ "taxonomyVersion": "v1-fr",
+ "generatedAt": "2026-07-12T10:14:52.364558+00:00",
+ "scope": "voie générale, PS -> Terminale, programmes in force rentrée 2025",
+ "counts": {
+  "topics": 6051,
+  "topicsBySubject": {
+   "Mathématiques": 943,
+   "Français": 648,
+   "SVT": 433,
+   "Physique-chimie": 331,
+   "Langues vivantes": 249,
+   "EMC": 235,
+   "Arts plastiques": 188,
+   "Biologie-écologie": 181,
+   "Histoire des arts": 164,
+   "Éducation musicale / Musique": 163,
+   "Enseignement scientifique": 159,
+   "Sciences et technologie": 158,
+   "EPS": 145,
+   "Technologie": 143,
+   "LVC (3e langue)": 142,
+   "Histoire": 141,
+   "LCA latin / grec": 137,
+   "Histoire-géographie": 128,
+   "SES": 114,
+   "HGGSP": 95,
+   "Sciences de l'ingénieur": 95,
+   "Socle commun": 94,
+   "LLCER": 80,
+   "Maths complémentaires": 75,
+   "Maths expertes": 73,
+   "Géographie": 68,
+   "NSI": 66,
+   "Philosophie": 56,
+   "Questionner le monde": 54,
+   "Danse": 53,
+   "EPPCS": 51,
+   "Cinéma-audiovisuel": 48,
+   "Théâtre": 48,
+   "SNT": 46,
+   "HLP": 40,
+   "Arts (enseignements artistiques)": 37,
+   "EVAR(S)": 37,
+   "Arts du cirque": 36,
+   "DGEMC": 32,
+   "Explorer le monde": 29,
+   "EMI": 23,
+   "CIT / SI (option 2nde)": 13
+  },
+  "dependencies": 10050,
+  "curricula": 17,
+  "curriculumStandards": 14549,
+  "clusters": 845
+ },
+ "files": {
+  "fr-curriculum-standards.json": {
+   "bytes": 11674182,
+   "sha256": "ffa73a8c19f744f8ef633c18becb3e744c805fbfabad868a74baca7e9f326c20"
+  },
+  "fr-topics.json": {
+   "bytes": 5349677,
+   "sha256": "95ecaadfff526a1de540d4547188d22bb89c859e42026b5560e000aa43804db9"
+  },
+  "fr-dependencies.json": {
+   "bytes": 1776296,
+   "sha256": "8f3133182a0330c99f159057afa5b4e36f7388ddb8e908012069e2e42bbb8824"
+  },
+  "fr-clusters.json": {
+   "bytes": 413474,
+   "sha256": "81bf6e83c680c3dbff39fe42fd3a401ec6cc4b3c5d8591bd9bf2e2605b457094"
+  }
+ },
+ "license": "Contenu officiel: Licence Ouverte / Open Licence v2.0 (Etalab). Distillation: projet Miguel Torrez."
+}

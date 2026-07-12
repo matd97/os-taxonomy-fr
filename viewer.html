@@ -208,6 +208,10 @@
   #playpill .pb:hover, #playpill .stop:hover { background: rgba(255,255,255,.18); }
   #playpill .toggle { background: rgba(232,113,58,.22); color: var(--accent); font-size: 12px; }
 
+  /* mobile GPUs pay dearly for backdrop blur over an animating canvas */
+  @media (pointer: coarse) {
+    #side, #sideToggle, #about, #tip, #card, #playpill { backdrop-filter: none; }
+  }
   body.embed #side { top: 69px; bottom: 53px; }
   body.embed #card { top: 85px; bottom: 69px; }
   body.embed #sideToggle { top: 81px; }
@@ -484,12 +488,17 @@
   const wrap=document.getElementById('wrap');
   const cv=document.getElementById('cv');
   const ctx=cv.getContext('2d');
+  // phones get fewer device pixels and thinner ambient edges
+  const COARSE=window.matchMedia('(pointer: coarse)').matches;
   let DPR=1,VW=0,VH=0;
   const stage=document.getElementById('stage');
+  let dprScale=1; // adaptive: the render governor lowers this on weak devices
   function resize(){
-    DPR=Math.min(window.devicePixelRatio||1,2);
+    DPR=Math.min(window.devicePixelRatio||1,COARSE?1.5:2)*dprScale;
     VW=stage.clientWidth; VH=stage.clientHeight;
-    cv.width=VW*DPR; cv.height=VH*DPR; cv.style.width=VW+'px'; cv.style.height=VH+'px';
+    cv.width=Math.round(VW*DPR); cv.height=Math.round(VH*DPR);
+    cv.style.width=VW+'px'; cv.style.height=VH+'px';
+    SPRITES.clear();
   }
 
   let rotY=0.6, tilt=-0.32, zoom=1, spinEnabled=!reduce;
@@ -962,6 +971,7 @@
   });
   const tickY=new Float32Array(tickEls.length);
   function updateRuler(){
+    if(VW<=720)return; // ruler is display:none on narrow screens
     for(let k=0;k<tickEls.length;k++){
       const t=tickEls[k];
       const y2=t.py*CT, z2=t.py*ST;
@@ -1026,6 +1036,28 @@
   const SNAP=BASE.map(c=>c.slice());
   const CURS=CUR.map(c=>c.join(','));
   const order=N.map((_,i)=>i);
+  let sortRot=1e9,sortTilt=0,sortZoom=1,sortAt=0;
+
+  // dot sprites: a circle+outline pre-rendered per (color, radius step);
+  // one scaled drawImage per node beats two vector paths and a per-node
+  // style string. Colors are only stable outside morphs, so the draw loop
+  // falls back to paths while a morph is in flight.
+  const SPRITES=new Map();
+  function sprite(key,R){
+    const k=key+'|'+R;
+    let s=SPRITES.get(k);
+    if(!s){
+      s=document.createElement('canvas');
+      s.width=s.height=Math.ceil((R+2)*2*DPR);
+      const c=s.getContext('2d');
+      c.scale(DPR,DPR);
+      c.beginPath();c.arc(R+2,R+2,R,0,6.2832);
+      c.fillStyle='rgb('+key+')';c.fill();
+      c.lineWidth=1;c.strokeStyle='rgba(8,10,18,.5)';c.stroke();
+      SPRITES.set(k,s);
+    }
+    return s;
+  }
 
   // edge batches: (soft/hard | dimmed) x depth quartile -> flat coord arrays
   const NB_BATCH=8;
@@ -1048,6 +1080,7 @@
       if(!reduce&&(N[a].appear>grow||N[b].appear>grow))continue;
       if(offscreen(a)&&offscreen(b))continue;
       if(hasSel&&lineage.edges.has(k)){linEdges.push(k);continue;}
+      if(COARSE&&!e[2]&&(k&1))continue; // phones: every other soft thread
       const d=(P[a*3+2]+P[b*3+2])/2;
       const dq=d<0.86?0:d<0.98?1:d<1.08?2:3;
       batches[(hasSel?0:(e[2]?4:0))+dq].push(P[a*3],P[a*3+1],P[b*3],P[b*3+1]);
@@ -1073,7 +1106,14 @@
       ctx.stroke();
     }
 
-    order.sort((a,b)=>P[a*3+2]-P[b*3+2]);
+    // painter's order barely changes frame to frame: re-sort only after real
+    // camera/layout movement (or periodically while the flag cloth waves)
+    const nowMs=performance.now();
+    if(morphT<1||Math.abs(rotY-sortRot)>0.02||Math.abs(tilt-sortTilt)>0.02||
+       Math.abs(zoom-sortZoom)>0.03*sortZoom||(layoutMode===2&&nowMs-sortAt>300)){
+      order.sort((a,b)=>P[a*3+2]-P[b*3+2]);
+      sortRot=rotY;sortTilt=tilt;sortZoom=zoom;sortAt=nowMs;
+    }
     for(const i of order){
       const n=N[i];
       if(!vis(i)||offscreen(i))continue;
@@ -1088,6 +1128,14 @@
       const rgb=CURS[i];
       const a=dim*(0.55+0.45*Math.min(1,pf*pf));
       const lit=isFocus||(hasSel&&inLin&&(!playSet||playSet.has(i)));
+      if(!lit&&morphT>=1){
+        const R=r<8?Math.round(r*2)/2:Math.round(r);
+        const off=R+2;
+        ctx.globalAlpha=a;
+        ctx.drawImage(sprite(rgb,R),sx-off,sy-off,off*2,off*2);
+        ctx.globalAlpha=1;
+        continue;
+      }
       if(lit){
         ctx.shadowColor='rgb('+rgb+')';ctx.shadowBlur=isFocus?18:9;
       } else ctx.shadowBlur=0;
@@ -1105,7 +1153,7 @@
   }
 
   const START=performance.now();
-  let lastTs=START;
+  let lastTs=START,drawAvg=8,halfRate=false,beat=0,lastAdj=START+2500;
   function frame(ts){
     if(!reduce) grow=Math.min(1.02,(ts-START)/2800*1.02);
     const dt=Math.min(64,ts-lastTs); lastTs=ts;
@@ -1157,11 +1205,29 @@
       if(Math.abs(panXT-panX)<1&&Math.abs(panYT-panY)<1){panX=panXT;panY=panYT;panXT=null;panYT=null;}
     }
     if(fitActive)fitStep();
-    draw();
+    // render governor: if a frame costs too much (weak devices), first draw
+    // every other tick, then step the canvas resolution down until frames
+    // are affordable; simulation stays dt-based so motion speed never changes
+    beat^=1;
+    if(!(halfRate&&beat)){
+      const t0=performance.now();
+      draw();
+      const t1=performance.now();
+      drawAvg+=((t1-t0)-drawAvg)*0.08;
+      if(drawAvg>24)halfRate=true;else if(drawAvg<15)halfRate=false;
+      if(t1-lastAdj>1500){
+        if(drawAvg>30&&dprScale>0.5){
+          dprScale=Math.max(0.5,dprScale-0.25);resize();lastAdj=t1;drawAvg=20;
+        } else if(drawAvg<7&&dprScale<1){
+          dprScale=Math.min(1,dprScale+0.25);resize();lastAdj=t1;drawAvg=12;
+        }
+      }
+    }
     requestAnimationFrame(frame);
   }
   applyLang();
   window.addEventListener('resize',()=>{resize();});
+  window._perf=()=>({drawAvg:+drawAvg.toFixed(2),halfRate,dpr:DPR,dprScale,sprites:SPRITES.size,coarse:COARSE});
   window._dbg=()=>{
     let py0=1e9,py1=-1e9,fp0=1e9,fp1=-1e9,x0=1e9,x1=-1e9,sy0=1e9,sy1=-1e9,sx0=1e9,sx1=-1e9;
     for(let i=0;i<N.length;i++){

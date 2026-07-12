@@ -42,12 +42,19 @@ Most curriculum data is either a flat list of standards or locked inside a produ
 | `data/sources.json` | The 127 verified official source documents |
 | `schema/` | JSON Schemas (Marble-compatible; topics extended with `nameFr`) |
 | `viewer.html` | The self-contained interactive 3D viewer (no dependencies, works offline) |
+| `viewer-template.html` | The same viewer with no data baked in, for building your own |
+| `scripts/inject_viewer_data.py` | Injects a graphdata payload into the template |
+| `.claude/skills/` | The `build-curriculum-taxonomy` agent skill (see below) |
 | `index.html` | Redirect to the live viewer at [migueltorrez.ai](https://www.migueltorrez.ai/projects/french-curriculum) |
 | `METHODOLOGY.md` | Precisely how this was built |
 
 ## How it was built
 
 Three days of orchestrated AI-agent pipelines (~1,700 agent runs) with deterministic code enforcing every global constraint: verbatim extraction with adversarial verification against the source pages, embedding-gated deduplication with judge panels, strict prerequisite proposal plus adversarial refutation, and code-enforced acyclicity. The guiding principle: **agents propose, code disposes**. The complete account, including honest limitations, is in [`METHODOLOGY.md`](METHODOLOGY.md).
+
+## Build your own (any country)
+
+This repo ships an agent skill that turns the whole pipeline into a reusable recipe: [`.claude/skills/build-curriculum-taxonomy/SKILL.md`](.claude/skills/build-curriculum-taxonomy/SKILL.md). Clone the repo, open it in [Claude Code](https://claude.com/claude-code) (or hand the SKILL.md to any capable agent), and ask it to build a taxonomy for your country. The skill walks through all seven phases: locking scope, corpus hunting past anti-bot walls, verbatim extraction with fidelity verification, micro-topic atomization with embedding-gated dedup, adversarial prerequisite refutation with code-enforced acyclicity, clusters, and rendering your own dataset into the included data-free viewer (`viewer-template.html` + `scripts/inject_viewer_data.py`). The schemas in `schema/` and the data files here serve as the worked example.
 
 ## Using the data
 
